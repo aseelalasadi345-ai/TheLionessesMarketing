@@ -3,9 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Projects Store</title>
+
+    <link rel="stylesheet" href="MyPage.css">
+    <script defer src="MyPage.js"></script>
 </head>
+
 <body>
-    
+
+    <header> //hii
+        <h1>Projects Store</h1>
+        <a href="#Projects">Projects</a>
+    </header>
+
+    <section class="products" id="projects">
+        <h2 class="section-title">Available Projects</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <a href="image/Hotel.png">
+                    <img src="image/Hotel.png">
+                </a>
+
+                <h3>Hotel Booking System</h3>
+                <p>A complete room reservation system with search, booking, and admin panel.</p>
+                <div class="price">$55</div>
+
+                <button class="bid-btn">Order on WhatsApp</button>
+            </div>
+
+
+            <div class="card">
+                <a href="image/Library.jpg">
+                    <img src="image/Library.jpg">
+                </a>
+
+                <h3>🔥Library Management System (Auction)🔥</h3>
+                <p>Website + Admin Panel + Poster + Documentation.</p>
+
+                <div class="auction-box">
+                    <div class="auction-title">AUCTION LIVE</div>
+
+                    <p><strong>Current Bid: </strong>$<span id="currentBid">30</span></p>
+
+                    <!-- timerr -->
+                    <p><strong>Ends In:</strong> <span id="countdown">Loading...</span></p>
+
+                    <input type="number" id="bidAmount" placeholder="Enter your bid" min="1">
+
+                    <button class="bid-btn" onclick="placeBid()">Place Bid</button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                 <a href="image/Student.jpg">
+                    <img src="image/Student.jpg">
+                </a>
+                <h3>Student Attendance System</h3>
+                <p>Attendance website with documentation and poster.</p>
+
+                <div class="price">$70</div>
+
+                <button class="bid-btn">Order on WhatsApp</button>
+            </div>
+
+        </div>
+    </section>
+
 </body>
 </html>
