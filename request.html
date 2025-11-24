@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Request Brand Audit – The Lionesses' Marketing</title>
+  <link rel="stylesheet" href="request.css">
+  <script src="request.js"></script>
+</head>
+
+<body>
+
+<!-- MAIN CONTAINER -->
+<div class="wrapper">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+
+    <h1 class="title">
+      <span>✨</span> Request Your Brand Audit
+    </h1>
+
+    <p class="subtitle">
+      Complete this form and our team will study your brand and send a customized
+      transformation roadmap tailored to your identity, audience, and goals.
+    </p>
+
+    <div class="features">
+      <div class="feat">🔍 Deep brand analysis</div>
+      <div class="feat">🎨 Visual identity review</div>
+      <div class="feat">📊 Social media audit</div>
+      <div class="feat">💡 Strategy recommendations</div>
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL: FORM -->
+  <div class="right-panel">
+    <form id="auditForm" method="POST" action="request.php">
+
+      <div class="input-group">
+        <label>Your Name</label>
+        <input type="text" name="name" required>
+      </div>
+
+      <div class="input-group">
+        <label>Email Address</label>
+        <input type="email" name="email" required>
+      </div>
+
+      <div class="input-group">
+        <label>Brand Name</label>
+        <input type="text" name="brand" required>
+      </div>
+
+      <div class="input-group">
+        <label>Industry</label>
+        <input type="text" name="industry" required>
+      </div>
+
+      <div class="input-group">
+        <label>Where is your brand struggling?</label>
+        <textarea name="message" required></textarea>
+      </div>
+
+      <button class="submit-btn" type="submit">
+        Send Request <span>➡️</span>
+      </button>
+
+      <p class="form-note">
+        We’ll reply within 24–48 hours with your audit.
+      </p>
+
+    </form>
+  </div>
+
+</div>
+
+<script src="request.js"></script>
+</body>
+</html>
