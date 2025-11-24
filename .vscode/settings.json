@@ -2,6 +2,6 @@
     "git.enableStatusBarSync": false,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
-    "git.enableCommitSigning": true,
+    "git.enableCommitSigning": false,
     "git.alwaysShowStagedChangesResourceGroup": true
 }
