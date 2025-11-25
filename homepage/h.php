@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION["userid"])) {
+    header("Location: login.html");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,17 +20,7 @@ fetch("header/header.php")
 </script>
 
 <div class="page-content">
-    <h2>Login</h2>
-
-    <form action="login.php" method="POST">
-        <label>Email</label><br>
-        <input type="email" name="email" required><br><br>
-
-        <label>Password</label><br>
-        <input type="password" name="password" required><br><br>
-
-        <button type="submit">Login</button>
-    </form>
+    <h1>Welcome, <?php echo $_SESSION["username"]; ?>!</h1>
 </div>
 
 <div id="footer-placeholder"></div>

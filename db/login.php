@@ -13,22 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows === 1) {
-        $stmt->bind_result($id, $username, $hashedPassword);
+        $stmt->bind_result($id, $username, $hash);
         $stmt->fetch();
 
-        if (password_verify($pass, $hashedPassword)) {
+        if (password_verify($pass, $hash)) {
             $_SESSION["userid"] = $id;
             $_SESSION["username"] = $username;
-
-            header("Location: homePage.html");
+            header("Location: homePage.php");
             exit();
         } else {
-            die("Incorrect password.");
+            die("Wrong password.");
         }
-
     } else {
         die("Email not found.");
     }
-
 }
 ?>

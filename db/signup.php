@@ -11,17 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         die("All fields are required!");
     }
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Invalid email format.");
-    }
+    $exists = $conn->prepare("SELECT id FROM users WHERE email = ?");
+    $exists->bind_param("s", $email);
+    $exists->execute();
+    $exists->store_result();
 
-    $check = $conn->prepare("SELECT id FROM users WHERE email = ?");
-    $check->bind_param("s", $email);
-    $check->execute();
-    $check->store_result();
-
-    if ($check->num_rows > 0) {
-        die("This email is already registered.");
+    if ($exists->num_rows > 0) {
+        die("Email already registered.");
     }
 
     $hashed = password_hash($pass, PASSWORD_DEFAULT);
@@ -32,8 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($stmt->execute()) {
         header("Location: login.html");
         exit();
-    } else {
-        die("Insert Error: " . $stmt->error);
     }
 }
 ?>

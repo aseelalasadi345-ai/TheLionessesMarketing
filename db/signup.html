@@ -1,47 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up</title>
-
     <link rel="stylesheet" href="header/header.css">
 </head>
-
 <body>
 
-    <!-- HEADER -->
-    <div id="header-placeholder"></div>
-    <script>
-        fetch("header/header.html")
-            .then(r => r.text())
-            .then(d => document.getElementById("header-placeholder").innerHTML = d);
-    </script>
+<div id="header-placeholder"></div>
+<script>
+fetch("header/header.php")
+    .then(r => r.text())
+    .then(d => document.getElementById("header-placeholder").innerHTML = d);
+</script>
 
-    <div class="page-content">
-        <h2>Create Your Account</h2>
+<div class="page-content">
+    <h2>Create Account</h2>
 
-        <form action="signup.php" method="POST">
-            <label>Username</label><br>
-            <input type="text" name="username" required><br><br>
+    <form action="signup.php" method="POST">
+        <label>Username</label><br>
+        <input type="text" name="username" required><br><br>
 
-            <label>Email</label><br>
-            <input type="email" name="email" required><br><br>
+        <label>Email</label><br>
+        <input type="email" name="email" required><br><br>
 
-            <label>Password</label><br>
-            <input type="password" name="password" required><br><br>
+        <label>Password</label><br>
+        <input type="password" name="password" required><br><br>
 
-            <button type="submit">Sign Up</button>
-        </form>
-    </div>
+        <button type="submit">Sign Up</button>
+    </form>
+</div>
 
-    <!-- FOOTER -->
-    <div id="footer-placeholder"></div>
-    <script>
-        fetch("header/footer.html")
-            .then(r => r.text())
-            .then(d => document.getElementById("footer-placeholder").innerHTML = d);
-    </script>
+<div id="footer-placeholder"></div>
+<script>
+fetch("header/footer.php")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer-placeholder").innerHTML = d);
+</script>
 
 </body>
 </html>

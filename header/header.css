@@ -1,29 +1,36 @@
-/* PAGE LAYOUT - FOOTER AT BOTTOM */
+/* ============================================================
+   GLOBAL PAGE STRUCTURE
+   ============================================================ */
+
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
+    font-family: Arial, sans-serif;
 }
 
 .page-content {
     flex: 1;
     padding: 20px;
+    margin-top: 170px;
 }
 
-/* ================= HEADER ================= */
+/* ============================================================
+   HEADER
+   ============================================================ */
+
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background: #e1a4c8;
+    background: #ffdbf4;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     z-index: 9999;
 }
 
-/* TOP LOGO SECTION */
 .top {
     text-align: center;
     padding: 12px 0;
@@ -32,12 +39,12 @@ html, body {
 .logo {
     font-size: 26px;
     font-weight: bold;
-    color: azure;
+    color: #4d004d;
 }
 
-/* ================= NAV BAR ================= */
+/* NAV BAR */
 .head {
-    background: #d6c2d0;
+    background: #ffc6ee;
     padding: 12px 40px;
     display: flex;
     align-items: center;
@@ -61,31 +68,42 @@ html, body {
     padding-right: 20px;
 }
 
-/* NAV LINK STYLE */
 .head a {
     text-decoration: none;
     font-size: 18px;
     font-weight: 500;
-    color: azure;
+    color: #4d004d;
 }
 
-/* ================= FOOTER ================= */
+.welcome {
+    font-weight: 600;
+    color: #4d004d;
+}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
 .footer {
-    background: #e1a4c8;
+    background: #ffbde6;
     padding: 35px 10px;
     text-align: center;
-    color:azure;
+    color: white;
     width: 100%;
-    border-top: 2px solid #e1a4c8;
+    border-top: 2px solid #f0a6d3;
+    font-weight: 500;
+    margin-top: auto;
 }
 
 .footer h3 {
     margin: 0 0 10px 0;
     font-size: 22px;
     font-weight: bold;
+    color: white;
 }
 
 .footer p {
     margin: 4px 0;
     font-size: 16px;
+    color: white;
 }
