@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Brand</title>
+    <link rel="stylesheet" href="addBrand.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Add New Brand</h1>
+
+    <form action="http://localhost/The%20Lionesses'%20Marketing/admin/addBrand.php" method="POST" enctype="multipart/form-data">
+
+        <label>Brand Name</label>
+        <input type="text" name="brand_name" required>
+
+        <label>Industry</label>
+        <input type="text" name="industry" placeholder="e.g., Cosmetics, Tech, Fashion" required>
+
+        <label>Brand Logo</label>
+        <input type="file" name="brand_logo" accept="image/*" required>
+
+        <button type="submit">Add Brand</button>
+    </form>
+
+</div>
+
+</body>
+</html>

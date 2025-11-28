@@ -1,0 +1,85 @@
+/* ----- GENERAL PAGE STYLING ----- */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* ----- CONTAINER BOX ----- */
+.container {
+    width: 420px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-left: 10px solid #002395; /* French blue */
+    border-right: 10px solid #ED2939; /* French red */
+}
+
+/* ----- TITLE ----- */
+.container h1 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 26px;
+    color: #002395;
+}
+
+/* ----- LABELS ----- */
+label {
+    display: block;
+    margin: 10px 0 6px;
+    font-weight: bold;
+    color: #002395;
+}
+
+/* ----- INPUT FIELDS ----- */
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+/* ----- INPUT FOCUS ----- */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #002395;
+    box-shadow: 0 0 6px rgba(0, 35, 149, 0.3);
+}
+
+/* ----- SUBMIT BUTTON ----- */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #002395;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.2s;
+}
+
+/* Button hover */
+button:hover {
+    background: #ED2939; /* French red */
+}
+
+/* ----- MOBILE FRIENDLY ----- */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+}
