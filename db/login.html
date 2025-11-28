@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="header/header.css">
+</head>
+<body>
+
+<div id="header-placeholder"></div>
+<script>
+fetch("header/header.php")
+    .then(r => r.text())
+    .then(d => document.getElementById("header-placeholder").innerHTML = d);
+</script>
+
+<div class="page-content">
+    <h2>Login</h2>
+
+    <form action="login.php" method="POST">
+        <label>Email</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Password</label><br>
+        <input type="password" name="password" required><br><br>
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<div id="footer-placeholder"></div>
+<script>
+fetch("header/footer.php")
+    .then(r => r.text())
+    .then(d => document.getElementById("footer-placeholder").innerHTML = d);
+</script>
+
+</body>
+</html>
