@@ -73,7 +73,7 @@ $conn->close();
 <header>
     <h1>Brand Transformation</h1>
     <p>Explore how our agency elevated brands before and after our intervention.</p>
-    <a href="admin/addTransformation.php" class="adminOnly">+ ADD TRANSFORMATION</a>
+    <a href="http://localhost/The%20Lionesses'%20Marketing/admin/addTransformation.php" class="adminOnly">+ ADD TRANSFORMATION</a>
 </header>
 
 <section class="projects-grid">
@@ -113,6 +113,12 @@ $conn->close();
 <?php endif; ?>
 
 </section>
+
+<div class="request-box">
+    <a href="../request/request.html" class="request-btn">
+        ✨ Request a Service
+    </a>
+</div>
 
 </body>
 </html>

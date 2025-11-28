@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Request a Service</title>
+    <link rel="stylesheet" href="request.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Request a Service</h1>
+
+    <form id="requestForm">
+
+        <label>Full Name</label>
+        <input type="text" name="client_name" required>
+
+        <label>Email</label>
+        <input type="email" name="client_email" required>
+
+        <label>Service Type</label>
+        <select name="service_type" required>
+            <option value="">Select Service</option>
+            <option value="Brand Audit">Brand Audit</option>
+            <option value="Social Media Management">Social Media Management</option>
+            <option value="Website Design">Website Design</option>
+            <option value="Brand Identity">Brand Identity</option>
+            <option value="Ads Campaign">Ads Campaign</option>
+        </select>
+
+        <label>Message</label>
+        <textarea name="message" rows="4" required></textarea>
+
+        <button type="submit">Submit Request</button>
+    </form>
+
+</div>
+
+<script src="request.js"></script>
+</body>
+</html>
