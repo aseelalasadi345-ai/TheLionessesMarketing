@@ -1,0 +1,349 @@
+/* RESET */
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+/* BODY */
+body {
+    background: #F5F7FF; /* Soft French gray-blue base */
+    color: #f8f8fa;      /* Deep navy text */
+    overflow-x: hidden;
+    padding-top: 100px; /* because header is fixed */
+}
+
+/* HEADER */
+.header {
+    background: #002395; /* French royal blue */
+    padding: 20px 50px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    color: white;
+}
+
+.left-side {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo {
+    font-size: 28px;
+    font-weight: 700;
+    color: white;
+}
+
+
+/* AVATAR */
+.avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+}
+
+.avatar-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.change-pic {
+    font-size: 11px;
+    color: #b9a898; /* gold accent */
+    margin-top: 2px;
+    text-decoration: underline;
+}
+
+
+.change-pic:hover {
+    opacity: .7;
+}
+
+.welcome {
+    font-size: 18px;
+    color: white;
+}
+
+/* NAV MENU */
+.menu a {
+    margin: 0 26px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: .2s;
+}
+
+.menu a:hover,
+.menu a.active {
+    text-decoration: underline;
+}
+
+/* LOGOUT (KEEP RED) */
+.logout {
+    color: #ED2939; /* French red */
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.logout:hover {
+    opacity: 0.8;
+}
+
+/* HERO SECTION */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 100px;
+    background: #4a61c0; /* pale blue like project cards */
+}
+
+.hero-content h1 {
+    font-size: 60px;
+    font-weight: 700;
+    color: #fbfcfc; /* blue headline */
+}
+
+.hero-content p {
+    width: 55%;
+    margin-top: 20px;
+    font-size: 20px;
+    color: #fcfcfe; /* navy */
+}
+
+.cta {
+    margin-top: 35px;
+    padding: 14px 35px;
+    font-size: 18px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: #ED2939; /* same red */
+    transition: .3s ease;
+}
+
+.cta:hover {
+    background: #b00020;
+}
+
+.cta.investor {
+    background: #0A0F3D; /* dark navy secondary */
+}
+
+.cta.investor:hover {
+    background: #021035;
+}
+
+/* HOW SECTION */
+.how, .why {
+    background: #5f73c5;
+    padding: 160px 120px;
+}
+
+.how h2, .why h2 {
+    color: #002395;
+    font-size: 52px;
+    margin-bottom: 18px;
+}
+
+.how p, .why p {
+    width: 70%;
+    font-size: 24px;
+    line-height: 1.6;
+    color: #f4f4f8;
+}
+.benefits {
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 60px;
+    padding: 180px 60px;
+}
+
+.benefits div {
+    width: 30%;
+    text-align: center;
+}
+
+.benefits h3 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    color: #f7f8fa;
+}
+
+.benefits p {
+    font-size: 20px;
+    color: #f8f9fb;
+}
+body { background: #5176a9; overflow-x: hidden;     padding-top: 100px; /* adjust height of header */
+}
+
+/* ================= HEADER ================= */
+.header {
+    background:#4e68c9;
+    padding:18px 50px;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+}
+
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-side {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: white;
+}
+.avatar {
+    width: 46px; height: 46px;
+    border-radius: 50%; border: 2px solid white;
+    object-fit: cover;
+}
+.avatar-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.change-pic {
+    font-size: 12px;
+    color: #d53c21;
+    text-decoration: underline;
+    margin-top: 4px;
+    cursor:pointer;
+}
+.change-pic:hover {
+    opacity: .7;
+}
+
+.welcome { font-size: 18px; 
+
+color:white;
+font-weight: bolder;
+}
+
+/* MENU */
+.menu a {
+    margin: 0 25px;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: .2s;
+}
+.menu a:hover,
+.menu a.active {
+    text-decoration: underline;
+}
+
+/* LOGOUT */
+.logout {
+    color: #FF4633;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+.logout:hover { opacity: .7; }
+
+/* ================= HERO ================= */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    padding-left: 100px;
+}
+.hero h1 {
+    font-size: 64px;
+    color: #fcfcfd;
+}
+.hero p {
+    margin-top: 15px;
+    width: 450px;
+    font-size: 22px;
+}
+.cta {
+    margin-top: 30px;
+    background: #FF4633;
+    color: rgb(252, 252, 254);
+    padding: 18px 40px;
+    border-radius: 14px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+.cta.investor {
+    background: transparent;
+    color: #f9f7f7;
+    border: 2px solid #FF4633;
+}
+
+/* ================= HOW / WHY ================= */
+.how, .why {
+    background: #2954aa;
+    padding: 150px 120px;
+    height: 100vh;
+}
+.how h2, .why h2 {
+    font-size: 52px;
+    color: #f6f7fa;
+}
+.how p, .why p {
+    width: 70%;
+    font-size: 26px;
+    margin-top: 20px;
+    line-height: 1.7;
+}
+
+/* ================= BENEFITS ================= */
+.benefits {
+    height: 100vh;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 80px 50px;
+}
+.benefits div {
+    width: 300px;
+    text-align: center;
+}
+.benefits h3 {
+    font-size: 38px;
+    margin-bottom: 10px;
+    color: #f8f9fb;
+}
+.benefits p {
+    font-size: 22px;
+    color: #f9f9f9;
+}

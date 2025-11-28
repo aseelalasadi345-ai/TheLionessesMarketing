@@ -1,0 +1,112 @@
+/* GENERAL */
+body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    background: #F5F7FF;
+    color: #0A0F3D;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: #002395; /* FRANCE BLUE */
+    color: white;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    opacity: 0.9;
+}
+
+/* ADMIN BUTTON */
+.adminOnly {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 22px;
+    background: #ED2939; /* FRANCE RED */
+    color: white;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.adminOnly:hover {
+    background: #b00020; /* darker red */
+}
+
+/* GRID OF PROJECTS */
+.projects-grid {
+    max-width: 1100px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* PROJECT CARD */
+.project-card {
+    background: white;
+    padding: 25px;
+    border-radius: 22px;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: #0A0F3D;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border-top: 6px solid #002395; /* Blue accent */
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* TITLE */
+.project-card h2 {
+    margin-top: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+/* IMPROVEMENT SCORE */
+.score strong {
+    color: #ED2939; /* FR RED */
+    font-size: 1.2rem;
+}
+
+/* BEFORE / AFTER */
+.project-content {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.before, .after {
+    flex: 1;
+    background: #ebefff; 
+    padding: 15px;
+    border-radius: 14px;
+    border-left: 4px solid #002395; /* Blue left border */
+}
+
+.before h3, .after h3 {
+    margin-top: 0;
+    font-size: 1.1rem;
+    color: #002395; /* Blue titles */
+}
+
+.before p, .after p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+}
