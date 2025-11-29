@@ -1,19 +1,16 @@
 <?php
 session_start();
 
-// Destroy all session data
+// Destroy all session data (log the user out)
+$_SESSION = [];
 session_unset();
 session_destroy();
 
-// Remove Remember Me cookies
-if (isset($_COOKIE["RM_USER"])) {
-    setcookie("RM_USER", "", time() - 3600, "/");
-}
-if (isset($_COOKIE["RM_PASS"])) {
-    setcookie("RM_PASS", "", time() - 3600, "/");
-}
+/*
+ * DO NOT delete RM_USER / RM_PASS here.
+ * These cookies are what power "Remember Me".
+ * If you clear them on logout, there is nothing left to autofill.
+ */
 
-// Redirect user to login page
 header("Location: login.php");
 exit();
-?>

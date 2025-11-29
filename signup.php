@@ -8,13 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email    = trim($_POST["email"]);
     $password = password_hash(trim($_POST["password"]), PASSWORD_DEFAULT);
 
-    // ensure uploads folder exists
     if (!is_dir("uploads")) mkdir("uploads", 0777, true);
 
-    // filename becomes uploads/123123_pic.png
     $avatarName = time() . "_" . basename($_FILES["avatar"]["name"]);
     $avatarPath = "uploads/" . $avatarName;
-
     move_uploaded_file($_FILES["avatar"]["tmp_name"], $avatarPath);
 
     $stmt = $conn->prepare(
@@ -25,36 +22,40 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($stmt->execute()) {
         header("Location: login.php");
         exit();
-    } else {
-        $msg = "Username or Email already exists!";
-    }
+    } else $msg = "⚠ Username or Email already exists!";
 }
 ?>
-
 <!DOCTYPE html>
 <html>
-<head><title>Sign Up</title></head>
+<head>
+<title>Sign Up - Lionesses Marketing</title>
+<link rel="stylesheet" href="ls.css">
+</head>
 <body>
 
-<h1>Sign Up</h1>
-<?php if ($msg) echo "<p style='color:red;'>$msg</p>"; ?>
+<div class="auth-container">
+    <h2>Create Account</h2>
+    <p>Join the Lionesses family</p>
 
-<form method="post" enctype="multipart/form-data">
-  Username:<br>
-  <input type="text" name="username" required><br><br>
+    <?php if ($msg): ?>
+        <div class="error-box"><?= $msg ?></div>
+    <?php endif; ?>
 
-  Email:<br>
-  <input type="email" name="email" required><br><br>
+    <form method="post" enctype="multipart/form-data">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <label class="upload">Upload Profile Photo
+            <input type="file" name="avatar" accept="image/*" required>
+        </label>
 
-  Password:<br>
-  <input type="password" name="password" required><br><br>
+        <button type="submit" class="btn-primary">Sign Up</button>
+    </form>
 
-  Profile Picture:<br>
-  <input type="file" name="avatar" accept="image/*" required><br><br>
+    <p class="switch">Already have an account?
+        <a href="login.php">Login here</a>
+    </p>
+</div>
 
-  <button type="submit">Create Account</button>
-</form>
-
-<a href="login.php">Back to Login</a>
 </body>
 </html>
