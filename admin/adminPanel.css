@@ -1,0 +1,116 @@
+/* GENERAL PAGE STYLE */
+body {
+    margin: 0;
+    font-family: Poppins, sans-serif;
+    background: #f5f7ff; 
+    padding: 40px;
+}
+
+/* PAGE TITLE */
+.title {
+    text-align: center;
+    font-size: 2.6rem;
+    color: #002395; /* France Blue */
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+/* NOTIFICATION BOX */
+.notification {
+    background: #fff4e5;
+    border-left: 6px solid #ff9800;
+    padding: 12px 18px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0 auto 25px auto;
+    font-size: 1.1rem;
+}
+
+/* QUICK BUTTONS (Top shortcuts) */
+.quick-links {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.admin-btn {
+    display: inline-block;
+    margin: 8px;
+    padding: 14px 26px;
+    border-radius: 14px;
+    
+    border: 3px solid #002395;      /* Blue border */
+    background: #ffffff;            /* White background */
+    color: #002395;
+    
+    font-weight: 600;
+    font-size: 1.05rem;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.admin-btn:hover {
+    border-color: #ED2939;  /* France Red */
+    color: #ED2939;
+    transform: translateY(-3px);
+}
+
+/* STAT BOXES */
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.stat-card {
+    width: 260px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    text-align: center;
+
+    border-left: 5px solid #002395;
+    border-right: 5px solid #ED2939;
+
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.10);
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #002395;
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 10px;
+    color: #ED2939; /* Red highlight */
+}
+
+/* FOOTER BUTTON (Back to Home) */
+.back-home {
+    display: block;
+    width: fit-content;
+    margin: 45px auto 0 auto;
+    padding: 12px 26px;
+    
+    background: #ED2939; 
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    
+    transition: 0.25s;
+}
+
+.back-home:hover {
+    background: #b30021;
+}

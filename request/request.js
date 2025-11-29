@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             console.log(data);  // ← to check PHP response
             alert("Your request has been submitted!");
-            window.location.href = "../homePage.html";
+            window.location.href = "../home/home.php";
         })
         .catch(err => {
             console.error(err);

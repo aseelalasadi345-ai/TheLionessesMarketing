@@ -59,6 +59,8 @@ if ($row['type'] === 'Before') {
 
 $projects_list = array_values($projects);
 
+$isAdmin = isset($_SESSION["role"]) && $_SESSION["role"] === "Admin";
+
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -73,7 +75,9 @@ $conn->close();
 <header>
     <h1>Brand Transformation</h1>
     <p>Explore how our agency elevated brands before and after our intervention.</p>
+    <?php if ($isAdmin): ?>
     <a href="http://localhost/The%20Lionesses'%20Marketing/admin/addTransformation.php" class="adminOnly">+ ADD TRANSFORMATION</a>
+    <?php endif; ?>
 </header>
 
 <section class="projects-grid">
