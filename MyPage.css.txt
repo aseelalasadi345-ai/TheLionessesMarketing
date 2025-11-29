@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: black;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    z-index: 1000;
+    padding-bottom: 10px;
+}
+
+.top {
+    text-align: center;
+    padding: 12px 0;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: orange;
+}
+
+nav.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+}
+
+nav.head a {
+    color: white;
+    text-decoration: none;
+    margin: 0 12px;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+nav.head a:hover {
+    color: orange;
+}
+
+.h, .l {
+    display: flex;
+    align-items: center;
+}
+
+.page-content {
+    margin-top: 170px;
+    padding: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #222;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.bid-btn {
+    display: inline-block;
+    margin-top: 12px;
+    padding: 10px 20px;
+    background: orange;
+    color: black;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.bid-btn:hover {
+    background: black;
+    color: orange;
+}
+
+.timer {
+    font-size: 18px;
+    margin: 8px 0;
+    font-weight: bold;
+    color: red;
+}
+
+.footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 30px;
+}
+
+.footer p {
+    margin: 5px 0;
+}
