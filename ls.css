@@ -150,4 +150,23 @@ body {
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
+}.signup-btn-home {
+   display: block;
+    width: 100%;          /* fills container like the Logout pill */
+    max-width: 260px;     /* same container width as logout */
+    margin: 25px auto;    /* centered under content */
+    padding: 15px 0;
+    background: #ED2939;  /* brand red */
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;  /* same pill shape */
+    box-shadow: 0 10px 25px rgba(237, 41, 57, 0.35); /* red glow */
+    transition: 0.25s ease;
+}
+.signup-btn-home:hover {   background: #b00020;  /* darker actionable red */
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(237, 41, 57, 0.45);
 }

@@ -71,9 +71,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <h2>Welcome Back 🦁</h2>
     <p>Access your Lionesses account</p>
 
-    <?php if ($msg): ?>
-        <div class="error-box"><?= $msg ?></div>
-    <?php endif; ?>
+   <?php if ($msg): ?>
+    <div class="error-box">
+        <?= $msg ?>
+        <?php if ($msg === "❌ User not found!"): ?>
+            <br>
+            <span style="font-size:14px;">
+                Don't have an account?
+                <a href="signup.php" style="color:#002395; font-weight:bold;">Sign up now</a>
+            </span>
+        <?php endif; ?>
+    </div>
+<?php endif; ?>
+
 
     <form method="post" autocomplete="off">
         <input type="text"
