@@ -1,10 +1,9 @@
 <?php
 session_start();
-include "../db.php";
+require "../db.php";
 
 // LOGIN STATE
 $isLogged = isset($_SESSION["username"]);
-$isAdmin = isset($_SESSION["role"]) && $_SESSION["role"] === "Admin";
 
 // AVATAR
 $avatar = "img/default.png";
@@ -23,87 +22,112 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
 
 <body>
 
-    <header class="header">
-        <nav class="nav">
+<div class="layout">
 
-            <!-- LEFT: LOGO + AVATAR -->
-            <div class="left-side">
-                <div class="logo">Lionesses Marketing</div>
+    <!-- LEFT BLUE COLUMN -->
+    <aside class="sidebar">
+        <h2 class="brand-title">Lionesses<br>Marketing</h2>
 
-                <?php if ($isLogged): ?>
-                    <div class="avatar-box">
-                        <img src="<?php echo $avatar; ?>" class="avatar">
-                        <a href="profile.php" class="change-pic">Change Photo</a>
-                    </div>
-                    <span class="welcome">Hi, <?php echo htmlspecialchars($_SESSION["username"]); ?></span>
-                <?php else: ?>
-                    <span class="welcome">Welcome Guest</span>
-                <?php endif; ?>
+        <?php if ($isLogged): ?>
+            <div class="user-area">
+                <img src="<?php echo $avatar; ?>" class="avatar">
+                <p class="username">Hi, <?php echo htmlspecialchars($_SESSION["username"]); ?></p>
+                <a href="profile.php" class="side-link">Change Photo</a>
             </div>
+        <?php else: ?>
+            <p class="username">Welcome Guest</p>
+        <?php endif; ?>
 
-            <!-- CENTER MENU -->
-            <div class="menu">
-                <a href="home.php" class="active">Home</a>
-                <a href="http://localhost/the%20lionesses'%20marketing/request/request.html">Requests</a>
-                <a href="aboutus.html">About Us</a>
-                <a href="feedback.html">Feedback</a>
-                <?php if ($isAdmin): ?>
-    <a href="http://localhost/the%20lionesses'%20marketing/admin/adminPanel.php" class="admin-btn">Admin Panel</a>
-<?php endif; ?>
-            </div>
+        <nav class="side-menu">
+            <a href="home.php" class="side-link active">🏠 Home</a>
+            <a href="request.html" class="side-link">📩 Requests</a>
+            <a href="aboutUs.html" class="side-link">💼 About Us</a>
+            <a href="feedback.html" class="side-link">⭐ Feedback</a>
+            <a href="contact.php" class="side-link">📞 Contact</a>
 
-            <!-- RIGHT SIDE BUTTONS -->
-            <div class="actions">
-                <?php if ($isLogged): ?>
-                    <a href="logout.php" class="logout">Logout</a>
-                <?php else: ?>
-                    <a href="login.php" class="login-btn">Login</a>
-                    <a href="signup.php" class="signup-btn">Sign Up</a>
-                <?php endif; ?>
-            </div>
-
+            <?php if ($isLogged && $_SESSION["role"] === "Admin"): ?>
+                <a href="adminPanel.php" class="side-link admin-tag">🛠 Admin Panel</a>
+            <?php endif; ?>
         </nav>
-    </header>
 
-   <section class="hero">
-    <div class="hero-content">
-        <h1>Your brand deserves structure</h1>
-        <p>We create systems that customers recognize and trust.</p>
-        <button class="cta">Browse</button>
-    </div>
-
-</section>
-
-
-    <section class="how">
-        <h2>How does it work?</h2>
-        <p>Real-time analysis for faster, safer bussinesses.</p>
-                    <img src="Gemini_Generated_Image_4zlr784zlr784zlr.png" class="how-img">
-
-    </section>
-
-    <section class="why">
-        <h2>Why we are better than others</h2>
-        <p>No hidden fees. No delays. More profit in less time.</p>
-            <img src="Screenshot 2025-11-29 144107.png" class="hero-img">
-
-    </section>
-
-    <section class="benefits">
-        <div>
-            <h3>quickly</h3>
-            <p>Decisions in minutes, not weeks.</p>
+        <!-- SPECIAL EXTRA LINKS -->
+        <div class="extra-links">
+            <a href="brandTransformation.html" class="extra-btn blue">Brand Transformation</a>
+            <a href="readyProjects.html" class="extra-btn red">Ready Projects</a>
         </div>
-        <div>
-            <h3>convenient</h3>
-            <p>Zero branch visits. Everything digital.</p>
-        </div>
-        <div>
-            <h3>accessible</h3>
-            <p>Fair access for everyone's budget.</p>
-        </div>
-    </section>
+
+        <?php if ($isLogged): ?>
+            <a href="logout.php" class="logout-btn">Logout</a>
+        <?php else: ?>
+            <a href="login.php" class="logout-btn">Login</a>
+        <?php endif; ?>
+
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="content">
+
+        <!-- HERO -->
+        <section class="hero">
+            <img src="Gemini_Generated_Image_4zlr784zlr784zlr.png" class="hero-img">
+            <div class="hero-box">
+                <h1>Your brand deserves structure</h1>
+                <p>We create systems that customers recognize and trust.</p>
+                <button class="cta">Browse</button>
+            </div>
+        </section>
+
+        <!-- INFO SECTIONS -->
+        <section class="info-section">
+            <h2>How it works</h2>
+            <div class="info-card">
+                We analyze your brand, identify weaknesses, and build a unified system that aligns visuals,
+                communication, and customer interaction — giving your brand a trusted identity.
+            </div>
+        </section>
+
+        <section class="info-section">
+            <h2>Why choose us</h2>
+            <div class="info-card">
+                We don’t just design; we engineer a solid identity for your business. Strategy, creativity, 
+                and technology combined to deliver results.
+            </div>
+        </section>
+
+        <!-- COMPARE -->
+        <section class="compare">
+            <h2>Why we are different</h2>
+            <div class="compare-box">
+                <table>
+                    <tr><th>Feature</th><th>🚀 Lionesses</th><th>⚠ Others</th></tr>
+                    <tr><td>Unified brand system</td><td class="yes">✔</td><td class="no">✖</td></tr>
+                    <tr><td>Data-driven decisions</td><td class="yes">✔</td><td class="no">✖</td></tr>
+                    <tr><td>Recognizable identity</td><td class="yes">✔</td><td class="no">Sometimes</td></tr>
+                    <tr><td>Scalable assets</td><td class="yes">✔</td><td class="no">✖</td></tr>
+                    <tr><td>Customer trust focus</td><td class="yes">✔</td><td class="no">Rare</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <!-- BENEFITS -->
+        <section class="benefits">
+            <div class="benefit">QUICKLY<p>Decisions in minutes</p></div>
+            <div class="benefit">CONVENIENT<p>Everything digital</p></div>
+            <div class="benefit">ACCESSIBLE<p>For all budgets</p></div>
+        </section>
+
+    </main>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <h3>Contact Us</h3>
+    <p>Email: lionesses.marketing@gmail.com</p>
+    <p>Phone: +961 03 140 618</p>
+    <p>Instagram: @lionessesmarketing</p>
+    <p><a class="footer-link" href="contact.php">Open Contact Page →</a></p>
+</footer>
 
 </body>
-
 </html>

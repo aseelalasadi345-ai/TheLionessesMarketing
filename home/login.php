@@ -4,41 +4,49 @@ require "../db.php";
 
 $msg = "";
 
-// READ COOKIES IF THEY EXIST
-$savedUser = $_COOKIE["RM_USER"] ?? "";
-$savedPass = $_COOKIE["RM_PASS"] ?? "";
+// Multi-user remember-me cookie
+$savedUsers = isset($_COOKIE["RM_USERS"])
+    ? json_decode($_COOKIE["RM_USERS"], true)
+    : [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $username = trim($_POST["username"]);
-    $password = trim($_POST["password"]);
-    $remember = isset($_POST["remember"]);
+    $identifier = trim($_POST["username"]); // username OR email
+    $password   = trim($_POST["password"]);
+    $remember   = isset($_POST["remember"]);
 
-    $stmt = $conn->prepare("SELECT id, email, password_hash, avatar, role FROM users WHERE username=?");
-    $stmt->bind_param("s", $username);
+    // MUST MATCH YOUR TABLE
+    $stmt = $conn->prepare("
+        SELECT id, username, email, password_hash, avatar, role
+        FROM users
+        WHERE username=? OR email=?
+    ");
+    $stmt->bind_param("ss", $identifier, $identifier);
     $stmt->execute();
     $stmt->store_result();
 
     if ($stmt->num_rows === 1) {
-        $stmt->bind_result($id, $email, $hash, $avatar, $role);
+        // ORDER MATCHES SELECT EXACTLY
+        $stmt->bind_result($id, $dbUser, $dbEmail, $hash, $avatar, $role);
         $stmt->fetch();
 
         if (password_verify($password, $hash)) {
 
+            // SESSIONS
             $_SESSION["userid"]   = $id;
-            $_SESSION["username"] = $username;
-            $_SESSION["email"]    = $email;
+            $_SESSION["username"] = $dbUser;
+            $_SESSION["email"]    = $dbEmail;
             $_SESSION["avatar"]   = $avatar;
             $_SESSION["role"]     = $role;
 
-          if ($remember) {
-    setcookie("RM_USER", $username, time() + (86400 * 30), "/", "", false, true);
-    setcookie("RM_PASS", $password, time() + (86400 * 30), "/", "", false, true);
-} else {
-    setcookie("RM_USER", "", time() - 3600, "/", "", false, true);
-    setcookie("RM_PASS", "", time() - 3600, "/", "", false, true);
-}
+            // REMEMBER ME (multi-user)
+            if ($remember) {
+                $savedUsers[$dbUser] = $password;
+            } else {
+                unset($savedUsers[$dbUser]);
+            }
 
+            setcookie("RM_USERS", json_encode($savedUsers), time() + 86400 * 30, "/", "", false, true);
 
             header("Location: home.php");
             exit();
@@ -50,13 +58,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
     <title>Login - Lionesses Marketing</title>
     <link rel="stylesheet" href="ls.css?v=<?php echo time(); ?>">
 </head>
-<body>
+<body class="login-body">
 
 <div class="auth-container">
     <h2>Welcome Back 🦁</h2>
@@ -66,62 +75,52 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="error-box"><?= $msg ?></div>
     <?php endif; ?>
 
-    <form method="post" autocomplete="on">
+    <form method="post" autocomplete="off">
         <input type="text"
                id="username"
                name="username"
-               placeholder="Username"
-               autocomplete="username"
-               value="<?= htmlspecialchars($savedUser) ?>"
+               placeholder="Username or Email"
                required>
-<input type="password"
-       id="password"
-       name="password"
-       placeholder="Password"
-       autocomplete="current-password"
-       data-pass="<?= htmlspecialchars($savedPass) ?>"
-       required>
 
+        <input type="password"
+               id="password"
+               name="password"
+               placeholder="Password"
+               required>
 
         <label class="remember">
-            <input type="checkbox" name="remember" <?= $savedUser ? "checked" : "" ?>>
+            <input type="checkbox" name="remember">
             Remember Me
         </label>
 
         <button type="submit" class="btn-primary">Login</button>
     </form>
-
-    <p class="switch">Don't have an account?
-        <a href="signup.php">Create one</a>
-    </p>
 </div>
 
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-    const usernameInput = document.getElementById("username");
-    const passwordInput = document.getElementById("password");
-    const rememberBox   = document.querySelector('input[name="remember"]');
-    const savedUser     = "<?= $savedUser ?>";
-    const savedPass     = "<?= $savedPass ?>";
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const remember = document.querySelector('input[name="remember"]');
 
-    // 🔹 ON PAGE LOAD → fields should be EMPTY, checkbox unchecked
-    usernameInput.value = "";
-    passwordInput.value = "";
-    rememberBox.checked = false;
+    const saved = <?= json_encode($savedUsers); ?>;
 
-    // 🔹 When user types → if username matches cookie → autofill password + check the box
-    usernameInput.addEventListener("input", function () {
-        if (this.value.trim() === savedUser && savedUser !== "") {
-            passwordInput.value = savedPass;
-            rememberBox.checked = true;
+    username.value = "";
+    password.value = "";
+    remember.checked = false;
+
+    username.addEventListener("input", function () {
+        const typed = this.value.trim();
+        if (saved[typed] !== undefined) {
+            password.value = saved[typed];
+            remember.checked = true;
         } else {
-            passwordInput.value = ""; // clear password
-            rememberBox.checked = false;
+            password.value = "";
+            remember.checked = false;
         }
     });
 });
 </script>
-
 
 </body>
 </html>

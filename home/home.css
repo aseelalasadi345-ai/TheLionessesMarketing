@@ -1,197 +1,252 @@
+/* FRENCH COLORS */
+:root {
+    --blue: #002395;
+    --red: #ED2939;
+    --white: #ffffff;
+    --bg: #f6f7ff;
+}
+
+/* RESET */
 body {
     margin: 0;
+    padding: 0;
+    background: var(--bg);
     font-family: "Poppins", sans-serif;
-    background: #F5F7FF;
-    color: #0A0F3D;
 }
 
-.header {
-    background: #002395; /* France Blue */
-    padding: 15px 40px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-.nav {
+/* LAYOUT (Sidebar + Content) */
+.layout {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: var(--blue);
+    padding: 40px 25px;
     color: white;
-}
-
-/* LEFT SIDE */
-.left-side {
-    display: flex;
-    align-items: center;
-    gap: 18px;
-}
-
-.logo {
-    font-size: 1.6rem;
-    font-weight: 700;
-}
-
-.avatar-box {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    box-shadow: 4px 0 20px rgba(0,0,0,0.20);
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+/* Sidebar title */
+.brand-title {
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+/* User area */
+.user-area {
+    margin-top: 20px;
+    text-align: center;
 }
 
 .avatar {
-    width: 45px;
-    height: 45px;
+    width: 90px;
+    height: 90px;
     border-radius: 50%;
     border: 3px solid white;
     object-fit: cover;
 }
 
-.change-pic {
-    color: #ffced3;
-    text-decoration: none;
-    font-size: 0.8rem;
-    margin-top: 3px;
+.username {
+    margin-top: 10px;
+    font-weight: 500;
 }
 
-/* CENTER MENU */
-.menu a {
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 600;
+.side-menu {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.side-link {
     color: white;
-    transition: 0.25s;
-}
-
-.menu a:hover,
-.menu .active {
-    border-bottom: 3px solid #ED2939; /* red underline */
-    padding-bottom: 5px;
-}
-
-/* RIGHT BUTTONS */
-.actions a {
-    padding: 8px 16px;
-    background: #ED2939; 
-    color: white;
-    border-radius: 25px;
     text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    opacity: .85;
+    font-size: 17px;
+}
+
+.side-link:hover,
+.side-link.active {
+    background: rgba(255,255,255,0.18);
+    opacity: 1;
+}
+
+.admin-tag {
+    background: rgba(255,215,100,0.25);
+    color: #ffeb99 !important;
     font-weight: 600;
-    transition: 0.25s;
 }
 
-.actions a:hover {
-    background: #b00021;
+/* Special extra buttons */
+.extra-links {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* ============================
-   HERO SECTION
-============================ */
-.hero {
-    background: linear-gradient(135deg, #002395, #5176a9);
+.extra-btn {
+    padding: 14px;
     text-align: center;
-    padding: 110px 20px;
+    border-radius: 12px;
     color: white;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.18);
 }
 
-.hero h1 {
-    font-size: 3.2rem;
-    margin-bottom: 10px;
+.extra-btn.blue { background: var(--blue); }
+.extra-btn.red { background: var(--red); }
+
+.extra-btn:hover {
+    transform: translateY(-5px);
 }
 
-.hero p {
-    font-size: 1.3rem;
-    opacity: 0.9;
+/* Logout */
+.logout-btn {
+    margin-top: 40px;
+    display: block;
+    padding: 12px;
+    text-align: center;
+    background: var(--red);
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    opacity: .85;
+}
+
+/* MAIN CONTENT */
+.content {
+    flex: 1;
+    padding: 40px 60px;
+}
+
+/* HERO */
+.hero {
+    position: relative;
+    height: 70vh;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+.hero-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .25;
+}
+
+.hero-box {
+    position: relative;
+    background: var(--blue);
+    padding: 40px;
+    width: 450px;
+    border-radius: 20px;
+    color: white;
+    margin-left: auto;
+    margin-top: 120px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
 }
 
 .cta {
-    margin-top: 25px;
-    background: #ED2939;
-    padding: 14px 35px;
-    border: none;
-    border-radius: 30px;
-    font-size: 18px;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: var(--red);
     color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
     cursor: pointer;
-    transition: 0.25s;
 }
 
-.cta:hover {
-    background: #b00021;
+.cta:hover { opacity: .85; }
+
+/* INFO SECTIONS */
+.info-section { margin-bottom: 60px; }
+
+.info-card {
+    background: var(--red);
+    color: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.20);
 }
 
-/* ============================
-   INFO SECTIONS (How / Why)
-============================ */
-section {
+/* COMPARE */
+.compare-box {
+    background: var(--red);
+    padding: 30px;
+    border-radius: 18px;
+    color: white;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.22);
+}
+
+.compare table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.compare th,
+.compare td {
+    padding: 12px;
     text-align: center;
-    margin: 60px auto;
-    padding: 0 20px;
 }
 
-section h2 {
-    font-size: 2rem;
-    color: #002395;
-}
+.yes { color: #98ffb2; font-weight: bold; }
+.no { color: #ffb3b3; font-weight: bold; }
 
-section p {
-    font-size: 1.2rem;
-    opacity: 0.8;
-    margin-bottom: 25px;
-}
-
-.how-img,
-.hero-img {
-    max-width: 75%;
-    border-radius: 20px;
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
-}
-
-/* ============================
-   BENEFITS
-============================ */
+/* BENEFITS */
 .benefits {
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    padding: 40px 20px;
+    gap: 25px;
 }
 
-.benefits div {
-    width: 230px;
-    background: white;
+.benefit {
+    background: var(--blue);
     padding: 25px;
+    width: 200px;
     border-radius: 18px;
-    text-align: center;
-    border-left: 8px solid #002395;
-    border-right: 8px solid #ED2939;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.benefits div h3 {
-    color: #002395;
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-}
-
-.benefits div p {
-    font-size: 1rem;
-    opacity: 0.85;
-}
-
-.admin-btn {
-    padding: 10px 20px;
-    background: #ED2939; /* red */
     color: white;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    margin-left: 15px;
-    transition: 0.3s;
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.22);
 }
 
-.admin-btn:hover {
-    background: #b00020;
+.benefit:hover {
+    transform: translateY(-8px);
 }
+
+/* FOOTER */
+.footer {
+    background: var(--blue);
+    color: white;
+    padding: 60px;
+    text-align: center;
+}
+
+.footer-link {
+    color: #ffc778;
+    font-weight: bold;
+}
+.footer-link:hover { opacity: .8; }
