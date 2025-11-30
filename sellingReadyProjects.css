@@ -1,0 +1,172 @@
+/* ========================= */
+/* FRENCH COLORS */
+/* ========================= */
+:root {
+    --blue: #002395;
+    --red: #ED2939;
+    --white: #ffffff;
+    --bg: #f4f6ff;
+}
+
+/* ========================= */
+/* GLOBAL */
+/* ========================= */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: var(--bg);
+    color: #222;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+.header {
+    background: var(--blue);
+    padding-bottom: 12px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+}
+
+.top {
+    text-align: center;
+    padding: 12px 0;
+}
+
+.logo {
+    color: var(--white);
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.nav-center a {
+    color: var(--white);
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.nav-center a:hover {
+    color: #ffea9e;
+}
+
+.nav-user a {
+    color: var(--white);
+    margin-left: 18px;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.20);
+}
+.nav-user a:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+/* ========================= */
+/* PAGE CONTENT */
+/* ========================= */
+.page-content {
+    padding-top: 160px;
+}
+
+/* ========================= */
+/* TITLES */
+/* ========================= */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    color: var(--blue);
+    font-weight: 800;
+    margin-bottom: 40px;
+}
+
+/* ========================= */
+/* CARDS */
+/* ========================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0 50px;
+}
+
+.card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    transition: .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.20);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+/* ========================= */
+/* BUTTONS */
+/* ========================= */
+.view-btn,
+.contact-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.view-btn {
+    background: var(--blue);
+    color: white;
+}
+.view-btn:hover {
+    background: #001b73;
+}
+
+.contact-btn {
+    background: var(--red);
+    color: white;
+}
+.contact-btn:hover {
+    background: #b40022;
+}
+
+/* ========================= */
+/* TIMER */
+/* ========================= */
+.timer {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+    color: var(--red);
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+.footer {
+    background: var(--blue);
+    color: white;
+    text-align: center;
+    padding: 40px 0;
+    margin-top: 40px;
+}

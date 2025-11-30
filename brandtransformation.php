@@ -1,5 +1,5 @@
 <?php
-include '../db.php';
+include 'db.php';
 
 $sql = "
     SELECT 
@@ -59,6 +59,8 @@ if ($row['type'] === 'Before') {
 
 $projects_list = array_values($projects);
 
+$isAdmin = isset($_SESSION["role"]) && $_SESSION["role"] === "Admin";
+
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -66,14 +68,16 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Brand Transformation</title>
-    <link rel="stylesheet" href="brandTransformation.css">
+    <link rel="stylesheet" href="brandtransormation.css">
 </head>
 <body>
 
 <header>
     <h1>Brand Transformation</h1>
     <p>Explore how our agency elevated brands before and after our intervention.</p>
-    <a href="admin/addTransformation.php" class="adminOnly">+ ADD TRANSFORMATION</a>
+    <?php if ($isAdmin): ?>
+    <a href="http://localhost/The%20Lionesses'%20Marketing/admin/addTransformation.php" class="adminOnly">+ ADD TRANSFORMATION</a>
+    <?php endif; ?>
 </header>
 
 <section class="projects-grid">
@@ -113,6 +117,12 @@ $conn->close();
 <?php endif; ?>
 
 </section>
+
+<div class="request-box">
+    <a href="../request/request.html" class="request-btn">
+        ✨ Request a Service
+    </a>
+</div>
 
 </body>
 </html>
