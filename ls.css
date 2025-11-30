@@ -1,51 +1,73 @@
-/* GLOBAL */
+/* ==============================
+   GLOBAL
+================================= */
 body {
     margin: 0;
     font-family: Poppins, sans-serif;
     background: linear-gradient(135deg, #002395, #5176a9);
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
+    color: #0A0F3D;
 }
 
-/* BOX */
+/* ==============================
+   AUTH MAIN CONTAINER
+================================= */
 .auth-container {
-    width: 400px;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    border-radius: 20px;
-    padding: 40px;
-    color: white;
-    box-shadow: 0 8px 32px rgba(0,0,0,.2);
-    animation: fadeIn .6s ease;
+    width: 420px;
+    background: white;
+    border-radius: 22px;
+    padding: 40px 35px;
+    box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.18);
+    animation: fadeIn 0.45s ease-in-out;
+    border-left: 7px solid #002395;
+    border-right: 7px solid #ED2939;
 }
 
 .auth-container h2 {
-    font-size: 32px;
-    margin-bottom: 10px;
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+    color: #002395;
+    font-weight: 700;
 }
 
 .auth-container p {
+    text-align: center;
+    color: #444;
     margin-bottom: 25px;
-    opacity: .9;
+    font-size: 0.95rem;
 }
 
-/* INPUTS */
-.auth-container input {
+/* ==============================
+   INPUTS
+================================= */
+.auth-container input[type="text"],
+.auth-container input[type="email"],
+.auth-container input[type="password"] {
     width: 100%;
     padding: 14px;
-    margin-bottom: 18px;
-    border-radius: 12px;
-    border: none;
-    outline: none;
-    font-size: 16px;
+    margin: 10px 0 18px 0;
+    border-radius: 10px;
+    border: 2px solid #dcdcdc;
+    font-size: 15px;
+    transition: 0.25s ease;
 }
 
+.auth-container input:focus {
+    border-color: #002395;
+    box-shadow: 0 0 6px #00239566;
+    outline: none;
+}
+
+/* UPLOAD */
 .upload {
     display: block;
     margin-bottom: 18px;
-    color: #FFCED3;
+    color: #002395;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -53,27 +75,54 @@ body {
     display: none;
 }
 
-/* BUTTON */
+/* ==============================
+   BUTTONS
+================================= */
 .btn-primary {
     width: 100%;
-    background: #ED2939;
     padding: 14px;
+    background: #ED2939;
     border: none;
-    border-radius: 14px;
     color: white;
-    font-size: 18px;
+    font-size: 17px;
+    border-radius: 12px;
     cursor: pointer;
     margin-top: 10px;
-    transition: .3s;
+    font-weight: 600;
+    transition: 0.25s ease;
 }
 
 .btn-primary:hover {
     background: #b00020;
 }
 
-/* SWITCH LINKS */
+/* ==============================
+   REMEMBER ME CHECKBOX
+================================= */
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0 18px 0;
+}
+
+.remember input[type="checkbox"] {
+    accent-color: #ED2939;
+    width: 18px;
+    height: 18px;
+}
+
+/* ==============================
+   SWITCH LINK
+================================= */
+.switch {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
 .switch a {
-    color: #FFCED3;
+    color: #002395;
     font-weight: bold;
     text-decoration: none;
 }
@@ -82,36 +131,23 @@ body {
     text-decoration: underline;
 }
 
-/* ERROR BOX */
+/* ==============================
+   ERROR BOX
+================================= */
 .error-box {
-    background: rgba(255, 0, 0, .4);
-    padding: 10px;
+    background: rgba(237, 41, 57, 0.18);
+    padding: 12px;
     border-radius: 8px;
-    margin-bottom: 15px;
+    color: #ED2939;
     text-align: center;
+    font-weight: 600;
+    margin-bottom: 15px;
 }
 
+/* ==============================
+   ANIMATIONS
+================================= */
 @keyframes fadeIn {
-    from {opacity: 0; transform: translateY(20px);}
-    to {opacity: 1; transform: translateY(0);}
-}
-/* REMOVE ANY POSITION, TRANSFORM, OR TOP OFFSET FROM CHECKBOX */
-.remember input[type="checkbox"] {
-    all: unset;              /* remove weird inherited stuff */
-    appearance: checkbox;    /* force native checkbox UI */
-    width: 18px;
-    height: 18px;
-    cursor: pointer;
-    margin-right: 10px;
-    accent-color: #ED2939;   /* red checkmark */
-}
-
-/* LOCK TEXT AND CHECKBOX ON SAME LINE */
-.remember {
-    display: flex;
-    align-items: center;     /* center vertically */
-    gap: 8px;                /* space between checkbox and text */
-    margin: 15px 0 25px 0;
-    color: #ffffff;
-    font-size: 17px;
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
