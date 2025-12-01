@@ -386,4 +386,74 @@ body {
     color: white !important;
     text-decoration: underline !important;
 }
+.auth-box {
+    text-align: center;
+    margin-top: 15px;
+}
 
+.signup-btn-home {
+    display: block;
+    margin-top: 6px;
+    color: #fff;
+    text-decoration: underline;
+    font-weight: 600;
+}
+.signup-btn-home:hover {
+    opacity: .8;
+}
+/* Red box container */
+.auth-box-red {
+    background: #ff2d2d;         /* brand red */
+    border-radius: 14px;
+    padding: 18px 10px;
+    margin-top: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+/* LOGIN BUTTON INSIDE BOX */
+.auth-btn {
+    display: block;
+    background: #ffffff;
+    color: #ff2d2d;
+    font-weight: 700;
+    padding: 12px 0;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* SIGN UP LINK UNDER LOGIN */
+.auth-link {
+    display: block;
+    color: #ffffff;
+    text-decoration: underline;
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+.auth-link:hover,
+.auth-btn:hover {
+    opacity: .85;
+}
+
+.auth-box-red {
+    display: block;
+    background: #ff2d2d;         /* Brand red */
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 0;
+    margin-top: 15px;
+    border-radius: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+    transition: .2s ease;
+    font-size: 1rem;
+}
+
+.auth-box-red:hover {
+    opacity: .85;
+    transform: translateY(-2px);
+}

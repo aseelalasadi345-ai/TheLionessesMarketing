@@ -58,12 +58,15 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
                 <a href="sellingReadyProjects.php" class="extra-btn red">Ready Projects</a>
             </div>
 
-            <?php if ($isLogged): ?>
-                <a href="logout.php" class="logout-btn">Logout</a>
-            <?php else: ?>
-           ss     <a href="login.php" class="logout-btn">Login</a>
-                <a href="signup.php" class="signup-btn-home">Sign Up</a>
-            <?php endif; ?>
+<?php if ($isLogged): ?>
+    <a href="logout.php" class="logout-btn">Logout</a>
+<?php else: ?>
+    <a href="login.php" class="auth-box-red">Login</a>
+    <a href="signup.php" class="auth-box-red">Sign Up</a>
+<?php endif; ?>
+
+
+
 
 
         </aside>
