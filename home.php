@@ -41,7 +41,7 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
             <nav class="side-menu">
                 <a href="home.php" class="side-link active">🏠 Home</a>
                 <a href="request.php" class="side-link">📩 Requests</a>
-                <a href="aboutus.php?run=1" class="side-link">👀 About Us</a>
+                <a href="aboutus.html?run=1" class="side-link">👀 About Us</a>
                 <a href="feedback.php" class="side-link">⭐ Feedback</a>
                 <a href="contact.php" class="side-link">📞 Contact</a>
             </nav>
