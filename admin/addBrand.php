@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->bind_param("sss", $brand_name, $industry, $logoPath);
 
     if ($stmt->execute()) {
-        echo "<script>alert('Brand Added Successfully!'); window.location='addBrand.html';</script>";
+        echo "<script>alert('Brand Added Successfully!'); window.location='adminPanel.php';</script>";
     } else {
         echo "Error: " . $stmt->error;
     }

@@ -80,7 +80,17 @@ if ($result->num_rows > 0) {
         $metricDisplay .= "<br><img src='$filePath' class='metric-image'>";
     } elseif ($ext === 'pdf') {
         $metricDisplay .= "<br><iframe src='$filePath' class='metric-pdf'></iframe>";
-    } else {
+    } elseif (in_array($ext, ['mp4','mov','avi','mkv'])) {
+
+    $metricDisplay .= "
+        <br>
+        <video class='metric-video' controls>
+            <source src='$filePath' type='video/$ext'>
+            Your browser does not support the video tag.
+        </video>
+    ";
+
+} else {
         $metricDisplay .= "<br><a href='$filePath' download class='metric-download'>📎 Download File</a>";
     }
 }
@@ -143,12 +153,27 @@ $conn->close();
                 $filePath = "../uploads/projects/{$project_details['file']}";
 
                 if (in_array($fileExt, ['png','jpg','jpeg','gif','webp'])) {
-                    echo "<img src='$filePath' class='project-main-image'>";
-                } elseif ($fileExt === 'pdf') {
-                    echo "<iframe src='$filePath' class='project-pdf'></iframe>";
-                } else {
-                    echo "<a href='$filePath' download class='btn-download'>📎 Download File</a>";
-                }
+
+    echo "<img src='$filePath' class='project-main-image'>";
+
+} elseif ($fileExt === 'pdf') {
+
+    echo "<iframe src='$filePath' class='project-pdf'></iframe>";
+
+} elseif (in_array($fileExt, ['mp4','mov','avi','mkv','webm'])) {
+
+    echo "
+        <video class='project-video' controls>
+            <source src='$filePath' type='video/$fileExt'>
+            Your browser does not support the video tag.
+        </video>
+    ";
+
+} else {
+
+    echo "<a href='$filePath' download class='btn-download'>📎 Download File</a>";
+
+}
             ?>
         <?php endif; ?>
     </div>

@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($stmt->execute()) {
         echo "<script>alert('Transformation image saved!'); 
-              window.location='addTransformation.php';</script>";
+              window.location='adminPanel.php';</script>";
         exit;
     } else {
         echo "Error: " . $stmt->error;

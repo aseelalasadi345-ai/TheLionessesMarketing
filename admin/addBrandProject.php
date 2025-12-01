@@ -32,7 +32,7 @@ $stmt->bind_param(
 
     if ($stmt->execute()) {
         echo "<script>alert('Brand–Project link added successfully!'); 
-              window.location='addBrandProject.php';</script>";
+              window.location='adminPanel.php';</script>";
         exit;
     } else {
         echo "Error: " . $stmt->error;

@@ -30,7 +30,7 @@ $newReq = $conn->query("SELECT COUNT(*) AS c FROM service_requests WHERE status=
 
 <?php if ($newReq > 0): ?>
 <div class="notification">
-    🔔 لديك <strong><?= $newReq ?></strong> طلبات جديدة!
+ <strong><?= $newReq ?></strong>
 </div>
 <?php endif; ?>
 
@@ -39,6 +39,7 @@ $newReq = $conn->query("SELECT COUNT(*) AS c FROM service_requests WHERE status=
     <a href="addBrand.html" class="admin-btn">+ Add Brand</a>
     <a href="addProjectmain.php" class="admin-btn">+ Add Project</a>
     <a href="addMetricmain.php" class="admin-btn">+ Add Metric</a>
+    <a href="addBrandProject.php" class="admin-btn">+ Add Brand Project</a> 
     <a href="addTransformation.php" class="admin-btn">+ Add Transformation</a>
 
 </div>

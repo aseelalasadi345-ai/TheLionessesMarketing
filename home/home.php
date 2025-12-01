@@ -2,13 +2,17 @@
 session_start();
 require "../db.php";
 
-// LOGIN STATE
 $isLogged = isset($_SESSION["username"]);
 
-// AVATAR
-$avatar = "img/default.png";
-if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])) {
-    $avatar = $_SESSION["avatar"];
+$avatar = "../img/default.png"; 
+
+if ($isLogged && !empty($_SESSION["avatar"])) {
+
+    $fullPath = $_SERVER['DOCUMENT_ROOT'] . "/The Lionesses' Marketing/" . $_SESSION["avatar"];
+
+    if (file_exists($fullPath)) {
+        $avatar = "../" . $_SESSION["avatar"]; 
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -30,7 +34,7 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
 
         <?php if ($isLogged): ?>
             <div class="user-area">
-                <img src="<?php echo $avatar; ?>" class="avatar">
+                <img src="<?= $avatar ?>" class="avatar">
                 <p class="username">Hi, <?php echo htmlspecialchars($_SESSION["username"]); ?></p>
                 <a href="profile.php" class="side-link">Change Photo</a>
             </div>
@@ -40,19 +44,19 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
 
         <nav class="side-menu">
             <a href="home.php" class="side-link active">🏠 Home</a>
-            <a href="request.html" class="side-link">📩 Requests</a>
+            <a href="../request.html" class="side-link">📩 Requests</a>
             <a href="aboutUs.html" class="side-link">💼 About Us</a>
             <a href="feedback.html" class="side-link">⭐ Feedback</a>
             <a href="contact.php" class="side-link">📞 Contact</a>
 
             <?php if ($isLogged && $_SESSION["role"] === "Admin"): ?>
-                <a href="adminPanel.php" class="side-link admin-tag">🛠 Admin Panel</a>
+                <a href="../admin/adminPanel.php" class="side-link admin-tag">🛠 Admin Panel</a>
             <?php endif; ?>
         </nav>
 
         <!-- SPECIAL EXTRA LINKS -->
         <div class="extra-links">
-            <a href="brandTransformation.html" class="extra-btn blue">Brand Transformation</a>
+            <a href="../brandTransformation/brandTransformation.php" class="extra-btn blue">Brand Transformation</a>
             <a href="readyProjects.html" class="extra-btn red">Ready Projects</a>
         </div>
 
@@ -77,6 +81,7 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
             </div>
         </section>
 
+        <div id="browsing">
         <!-- INFO SECTIONS -->
         <section class="info-section">
             <h2>How it works</h2>
@@ -116,6 +121,36 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
             <div class="benefit">ACCESSIBLE<p>For all budgets</p></div>
         </section>
 
+        <section class="samples">
+    <h2>Some of Our Work</h2>
+
+    <div class="samples-grid">
+
+        <!-- Image 1 -->
+        <div class="sample-box">
+            <img src="../imagesvideos/flames.jpg" class="sample-img">
+        </div>
+
+<div class="sample-box">
+            <video class="sample-video" autoplay muted loop playsinline>
+                <source src="../imagesvideos/SarasCollectionads.MP4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="sample-box">
+            <video class="sample-video" autoplay muted loop playsinline>
+                <source src="../imagesvideos/allnaturals.MP4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="sample-box">
+            <img src="../imagesvideos/cosmetics.jpg" class="sample-img">
+        </div>
+
+    </div>
+</section>
+
+        </div>
     </main>
 
 </div>
@@ -130,4 +165,13 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
 </footer>
 
 </body>
+
+<script>
+document.querySelector(".cta").addEventListener("click", function() {
+    document.getElementById("browsing").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+</script>
+
 </html>

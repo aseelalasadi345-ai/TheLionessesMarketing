@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     );
 
     if ($stmt->execute()) {
-        echo "<script>alert('Metric Added Successfully!'); window.location='addMetric.html';</script>";
+        echo "<script>alert('Metric Added Successfully!'); window.location='adminPanel.php';</script>";
     } else {
         echo "Error: " . $stmt->error;
     }

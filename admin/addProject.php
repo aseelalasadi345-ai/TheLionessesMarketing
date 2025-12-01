@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     );
 
     if ($stmt->execute()) {
-        echo "<script>alert('Project added successfully!'); window.location='addProject.html';</script>";
+        echo "<script>alert('Project added successfully!'); window.location='adminPanel.php';</script>";
     } else {
         echo "<h3>Error: " . $stmt->error . "</h3>";
     }

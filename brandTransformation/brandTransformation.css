@@ -6,26 +6,10 @@ body {
     color: #0A0F3D;
 }
 
-/* HEADER */
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: #002395; /* FRANCE BLUE */
-    color: white;
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 3rem;
-    font-weight: 700;
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-    opacity: 0.9;
+.admin-tag {
+    background: rgba(255,215,100,0.25);
+    color: #ffeb99 !important;
+    font-weight: 600;
 }
 
 /* ADMIN BUTTON */
