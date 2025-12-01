@@ -13,23 +13,11 @@ session_start();
 </head>
 
 <body>
-
 <header class="header">
+    <div class="nav-container">
 
-    <div class="top">
-        <div class="logo">Lionesses Marketing</div>
-    </div>
-
-    <nav class="nav">
-
-        <div class="nav-center">
-            <a href="home.php">Home</a>
-            <a href="request.html">Requests</a>
-            <a href="aboutUs.html">About Us</a>
-            <a href="feedback.html">Feedback</a>
-        </div>
-
-        <div class="nav-user">
+        <!-- LEFT SIDE -->
+        <div class="nav-left">
             <?php if (isset($_SESSION["username"])): ?>
                 <span class="welcome">Hi, <?php echo htmlspecialchars($_SESSION["username"]); ?></span>
                 <a class="logout" href="logout.php">Logout</a>
@@ -39,8 +27,24 @@ session_start();
             <?php endif; ?>
         </div>
 
-    </nav>
+        <!-- CENTER TITLE -->
+        <div class="nav-center-title">
+            Lionesses Marketing
+        </div>
+
+        <!-- RIGHT LINKS -->
+        <div class="nav-right">
+            <a href="home.php">Home</a>
+            <a href="request.php">Requests</a>
+            <a href="aboutus.html?run=1">About Us</a>
+            <a href="feedback.php">Feedback</a>
+        </div>
+
+    </div>
 </header>
+
+
+
 
 <div class="page-content">
 
@@ -52,7 +56,7 @@ session_start();
             <!-- CARD 1 -->
             <div class="card">
                 <a href="supermarkt.html">
-                    <img src="super.jpg" alt="SuperMarkt">
+                    <img src="image/supermarkt.jpg" alt="SuperMarkt">
                 </a>
                 <h3>SuperMarkt</h3>
 
@@ -67,7 +71,7 @@ session_start();
             <!-- CARD 2 -->
             <div class="card">
                 <a href="apartment.html">
-                    <img src="apartment.jpg" alt="Apartment Project">
+                    <img src="image/apartment.jpg" alt="Apartment Project">
                 </a>
                 <h3>🔥 Apartment (Special Offer) 🔥</h3>
 
@@ -84,7 +88,7 @@ session_start();
             <!-- CARD 3 -->
             <div class="card">
                 <a href="juice.html">
-                    <img src="Juicee.jpg" alt="Juice Project">
+                    <img src="image/juice.jpg" alt="Juice Project">
                 </a>
                 <h3>Juice Project</h3>
 
@@ -106,7 +110,16 @@ session_start();
     <p>Email: lionesses.marketing@gmail.com</p>
     <p>Phone: +961 03 140 618</p>
     <p>Instagram: @lionessesmarketing</p>
+
+    <p>
+        <a class="footer-link" 
+           href="https://wa.me/96103140618?text=Hello%20Lionesses%20Marketing,%20I%20need%20help%20with%20..." 
+           target="_blank">
+           Open WhatsApp Chat →
+        </a>
+    </p>
 </footer>
+
 
 </body>
 </html>

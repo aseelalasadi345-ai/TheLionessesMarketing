@@ -272,23 +272,118 @@ body {
     background: #0c00b0;
     transform: translateY(-5px);
 }
-.signup-btn-home {
-   display: block;
-    width: 100%;          /* fills container like the Logout pill */
-    max-width: 260px;     /* same container width as logout */
-    margin: 25px auto;    /* centered under content */
-    padding: 15px 0;
-    background: #ED2939;  /* brand red */
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 14px 20px;
+    border-radius: 14px;
+    margin: 10px 0;
+    transition: .25s ease;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-3px);
+}
+
+.menu-item a {
+    color: white;
     text-decoration: none;
-    border-radius: 20px;  /* same pill shape */
-    box-shadow: 0 10px 25px rgba(237, 41, 57, 0.35); /* red glow */
-    transition: 0.25s ease;
+    font-size: 1.25rem;
+    font-weight: 500;
 }
-.signup-btn-home:hover {   background: #b00020;  /* darker actionable red */
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(237, 41, 57, 0.45);
+
+.menu-item a:hover {
+    color: #ED2939; /* matches your brand red */
 }
+/* ICON INSIDE MENU ITEM */
+.menu-icon {
+    width: 26px;               /* Perfect size for sidebar nav */
+    height: 26px;              /* Keeps aspect ratio consistent */
+    margin-right: 12px;        /* Spacing between icon and text */
+    filter: brightness(1.2);   /* Makes icon pop on dark background */
+    transition: .25s ease;
+}
+
+/* OPTIONAL — animate icon on hover */
+.menu-item:hover .menu-icon {
+    transform: scale(1.15) rotate(3deg);
+    filter: brightness(1.4);
+}
+/* ========================= */
+/* GLOBAL HEADER LAYOUT */
+/* ========================= */
+
+.header {
+    background: var(--blue);
+    padding: 14px 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 50px;
+}
+
+/* LEFT SECTION (HI + LOGOUT) */
+.nav-left {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.welcome {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.logout {
+    border: 2px solid var(--red);
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    color: var(--red);
+    text-decoration: none;
+}
+.logout:hover {
+    background: var(--red);
+    color: white;
+}
+
+/* CENTER LOGO */
+.nav-center-title {
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* RIGHT NAV LINKS */
+.nav-right a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: var(--red);
+    font-weight: 600;
+    font-size: 18px;
+    transition: .2s;
+}
+.nav-right a:hover {
+    color: #ffb3b3;
+}
+
+/* ACTIVE PAGE (HIGHLIGHT CURRENT PAGE) */
+.nav-right .active-page {
+    color: white !important;
+    text-decoration: underline !important;
+}
+

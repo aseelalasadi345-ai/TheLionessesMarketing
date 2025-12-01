@@ -18,18 +18,14 @@ body {
     color: #222;
 }
 
-/* ========================= */
-/* HEADER */
-/* ========================= */
 .header {
     background: var(--blue);
-    padding-bottom: 12px;
+    padding: 10px 0;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
     position: fixed;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
 }
-
 .top {
     text-align: center;
     padding: 12px 0;
@@ -43,40 +39,48 @@ body {
 
 .nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* left + center + right logic */
+    align-items: center;
     padding: 0 40px;
 }
 
+
+/* NAVIGATION CENTER */
 .nav-center a {
-    color: var(--white);
-    margin: 0 15px;
+    color: var(--red); /* MAKE ALL MENU ITEMS RED */
+    margin: 0 25px;
     text-decoration: none;
-    font-weight: 500;
-    font-size: 17px;
+    font-weight: 600;
+    font-size: 19px;
 }
 
 .nav-center a:hover {
-    color: #ffea9e;
+    color: #ffb3b3; /* softer red hover */
 }
 
+/* USER AREA LEFT SIDE */
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-left: 40px; /* pushes logout to LEFT */
+}
+
+/* LOGOUT BUTTON */
 .nav-user a {
-    color: var(--white);
-    margin-left: 18px;
-    text-decoration: none;
-    padding: 6px 14px;
+    background: transparent;
+    border: 2px solid var(--red);
+    color: var(--red);
+    padding: 5px 16px;
     border-radius: 10px;
-    background: rgba(255,255,255,0.20);
-}
-.nav-user a:hover {
-    background: rgba(255,255,255,0.35);
+    font-weight: 600;
 }
 
-/* ========================= */
-/* PAGE CONTENT */
-/* ========================= */
-.page-content {
-    padding-top: 160px;
+.nav-user a:hover {
+    background: var(--red);
+    color: white;
 }
+
 
 /* ========================= */
 /* TITLES */
@@ -169,4 +173,67 @@ body {
     text-align: center;
     padding: 40px 0;
     margin-top: 40px;
+}
+.username {
+    color: white !important;         /* always white */
+    font-size: 22px;                 /* bigger */
+    font-weight: 700;                /* bold */
+    margin-left: 12px;
+    text-transform: capitalize;      /* Hi, Rawand */
+}
+.nav-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 0 40px;
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.welcome {
+    color: white;
+    font-size: 22px;
+    font-weight: 700;
+}
+.logout {
+    border: 2px solid var(--red);
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--red);
+}
+.logout:hover {
+    background: var(--red);
+    color: white;
+}
+.nav-center-title {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+}
+
+/* RIGHT NAV LINKS */
+.nav-right a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: var(--red);
+    font-weight: 600;
+    font-size: 18px;
+}
+.nav-right a:hover {
+    color: #ffb3b3;
+}
+.footer-link {
+    color: #25D366; /* WhatsApp green */
+    font-weight: 700;
+    text-decoration: none;
+}
+.footer-link:hover {
+    text-decoration: underline;
+    opacity: .85;
 }

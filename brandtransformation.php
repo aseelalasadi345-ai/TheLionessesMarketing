@@ -1,4 +1,5 @@
 <?php
+session_start();
 include 'db.php';
 
 $sql = "
@@ -21,46 +22,34 @@ $sql = "
 ";
 
 $result = $conn->query($sql);
-
 $projects = [];
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-
         $id = $row['project_id'];
 
         if (!isset($projects[$id])) {
-    $projects[$id] = [
-        'id' => $row['project_id'],
-        'title' => $row['project_title'],
-        'score' => $row['improvement_score'],
-        'status' => $row['transformation_status'],
-        'image' => $row['main_image_url'],
-        'before' => [],
-        'after' => []
-    ];
-}
+            $projects[$id] = [
+                'id' => $row['project_id'],
+                'title' => $row['project_title'],
+                'score' => $row['improvement_score'],
+                'status' => $row['transformation_status'],
+                'image' => $row['main_image_url'],
+                'before' => [],
+                'after' => []
+            ];
+        }
 
-$metricText = $row['detail_text'];
-$metricValue = $row['metric_value'];
+        $metricText = $row['detail_text'];
+        $metricValue = $row['metric_value'];
+        $fullMetric = $metricValue !== null ? "$metricText ($metricValue)" : $metricText;
 
-$fullMetric = $metricValue !== null 
-    ? "$metricText ($metricValue)"
-    : $metricText;
-
-if ($row['type'] === 'Before') {
-    $projects[$id]['before'][] = $fullMetric;
-} elseif ($row['type'] === 'After') {
-    $projects[$id]['after'][] = $fullMetric;
-}
-
+        if ($row['type'] === 'Before') $projects[$id]['before'][] = $fullMetric;
+        if ($row['type'] === 'After')  $projects[$id]['after'][] = $fullMetric;
     }
 }
 
 $projects_list = array_values($projects);
-
-$isAdmin = isset($_SESSION["role"]) && $_SESSION["role"] === "Admin";
-
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -68,17 +57,39 @@ $conn->close();
 <head>
     <meta charset="UTF-8">
     <title>Brand Transformation</title>
-    <link rel="stylesheet" href="brandtransormation.css">
+    <link rel="stylesheet" href="brandtransformation.css?v=<?php echo time(); ?>">
 </head>
 <body>
 
-<header>
-    <h1>Brand Transformation</h1>
-    <p>Explore how our agency elevated brands before and after our intervention.</p>
-    <?php if ($isAdmin): ?>
-    <a href="http://localhost/The%20Lionesses'%20Marketing/admin/addTransformation.php" class="adminOnly">+ ADD TRANSFORMATION</a>
-    <?php endif; ?>
+<header class="header">
+    <div class="nav-container">
+
+        <!-- LEFT SECTION -->
+        <div class="nav-left">
+            <?php if (isset($_SESSION["username"])): ?>
+                <span class="welcome">Hi, <?= htmlspecialchars($_SESSION["username"]); ?></span>
+                <a href="logout.php" class="logout">Logout</a>
+            <?php else: ?>
+                <a href="login.php" class="auth-btn">Login</a>
+                <a href="signup.php" class="auth-btn">Sign Up</a>
+            <?php endif; ?>
+        </div>
+
+        <!-- CENTER BRAND PAGE TITLE -->
+        <div class="nav-center-title">Brand Transformation</div>
+
+        <!-- RIGHT NAVIGATION -->
+        <div class="nav-right">
+            <a href="home.php">Home</a>
+            <a href="request.php">Requests</a>
+            <a href="sellingReadyProjects.php">Ready Projects</a>
+            <a href="aboutus.html?run=1">About Us</a>
+            <a href="feedback.php">Feedback</a>
+        </div>
+
+    </div>
 </header>
+
 
 <section class="projects-grid">
 
@@ -123,6 +134,21 @@ $conn->close();
         ✨ Request a Service
     </a>
 </div>
+<footer class="footer-box">
+    <h3>Contact Us</h3>
+
+    <p>Email: lionesses.marketing@gmail.com</p>
+    <p>Phone: +961 03 140 618</p>
+    <p>Instagram: @lionessesmarketing</p>
+
+    <p>
+        <a class="footer-link"
+           href="https://wa.me/96103140618?text=Hello%20Lionesses%20Marketing,%20I%20need%20help%20with%20..."
+           target="_blank">
+           Open WhatsApp Chat →
+        </a>
+    </p>
+</footer>
 
 </body>
 </html>

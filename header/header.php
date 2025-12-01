@@ -1,32 +1,25 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <header class="header">
 
-    <div class="top">
-        <div class="logo">Lionesses Marketing</div>
+    <!-- LEFT SIDE: Username + Logout -->
+    <div class="left-info">
+        Hi, <?= $_SESSION["username"]; ?> |
+        <a class="logout" href="logout.php">Logout</a>
     </div>
 
-    <nav class="head">
+    <!-- CENTER LOGO -->
+    <div class="logo">LIONESSES MARKETING</div>
 
-        <!-- CENTER NAV -->
-        <div class="h">
-            <a href="../homePage.php">Home</a>
-            <a href="../request.html">Requests</a>
-            <a href="../brandTransformation.html">About Us</a>
-            <a href="../feedback.html">Feedback</a>
-        </div>
-
-        <!-- RIGHT NAV -->
-        <div class="l">
-            <?php if (isset($_SESSION["username"])): ?>
-                <span class="welcome">Hi, <?php echo $_SESSION["username"]; ?></span>
-                <a href="../logout.php">Logout</a>
-            <?php else: ?>
-                <a href="../login.html">Login</a>
-                <a href="../signup.html">Sign Up</a>
-            <?php endif; ?>
-        </div>
-
+    <!-- RIGHT NAVIGATION -->
+    <nav>
+        <a href="home.php">Home</a>
+        <a href="request.php">Requests</a>
+        <a href="aboutus.html">About Us</a>
+        <a href="feedback.php">Feedback</a>
     </nav>
+
 </header>
