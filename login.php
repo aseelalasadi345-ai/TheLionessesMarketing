@@ -3,19 +3,15 @@ session_start();
 require "db.php";
 
 $msg = "";
-
-// Multi-user remember-me cookie
 $savedUsers = isset($_COOKIE["RM_USERS"])
     ? json_decode($_COOKIE["RM_USERS"], true)
     : [];
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $identifier = trim($_POST["username"]); // username OR email
+    $identifier = trim($_POST["username"]); //aseel 7taytelek hay lal email
     $password   = trim($_POST["password"]);
     $remember   = isset($_POST["remember"]);
-
-    // MUST MATCH YOUR TABLE
     $stmt = $conn->prepare("
         SELECT id, username, email, password, avatar, role
         FROM users
@@ -26,20 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $stmt->store_result();
 
     if ($stmt->num_rows === 1) {
-        // ORDER MATCHES SELECT EXACTLY
         $stmt->bind_result($id, $dbUser, $dbEmail, $hash, $avatar, $role);
         $stmt->fetch();
 
         if (password_verify($password, $hash)) {
 
-            // SESSIONS
             $_SESSION["userid"]   = $id;
             $_SESSION["username"] = $dbUser;
             $_SESSION["email"]    = $dbEmail;
             $_SESSION["avatar"]   = $avatar;
             $_SESSION["role"]     = $role;
 
-            // REMEMBER ME (multi-user)
             if ($remember) {
                 $savedUsers[$dbUser] = $password;
             } else {

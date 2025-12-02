@@ -1,6 +1,4 @@
-/* ==============================
-   GLOBAL
-================================= */
+
 body {
     margin: 0;
     font-family: Poppins, sans-serif;
@@ -12,9 +10,6 @@ body {
     color: #0A0F3D;
 }
 
-/* ==============================
-   AUTH MAIN CONTAINER
-================================= */
 .auth-container {
     width: 420px;
     background: white;
@@ -41,9 +36,7 @@ body {
     font-size: 0.95rem;
 }
 
-/* ==============================
-   INPUTS
-================================= */
+
 .auth-container input[type="text"],
 .auth-container input[type="email"],
 .auth-container input[type="password"] {
@@ -62,7 +55,7 @@ body {
     outline: none;
 }
 
-/* UPLOAD */
+
 .upload {
     display: block;
     margin-bottom: 18px;
@@ -75,9 +68,6 @@ body {
     display: none;
 }
 
-/* ==============================
-   BUTTONS
-================================= */
 .btn-primary {
     width: 100%;
     padding: 14px;
@@ -96,9 +86,7 @@ body {
     background: #b00020;
 }
 
-/* ==============================
-   REMEMBER ME CHECKBOX
-================================= */
+
 .remember {
     display: flex;
     align-items: center;
@@ -112,9 +100,7 @@ body {
     height: 18px;
 }
 
-/* ==============================
-   SWITCH LINK
-================================= */
+
 .switch {
     margin-top: 15px;
     text-align: center;
@@ -131,9 +117,7 @@ body {
     text-decoration: underline;
 }
 
-/* ==============================
-   ERROR BOX
-================================= */
+
 .error-box {
     background: rgba(237, 41, 57, 0.18);
     padding: 12px;
@@ -144,29 +128,27 @@ body {
     margin-bottom: 15px;
 }
 
-/* ==============================
-   ANIMATIONS
-================================= */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
 }.signup-btn-home {
    display: block;
-    width: 100%;          /* fills container like the Logout pill */
-    max-width: 260px;     /* same container width as logout */
-    margin: 25px auto;    /* centered under content */
+    width: 100%;         
+    max-width: 260px;    
+    margin: 25px auto;  
     padding: 15px 0;
-    background: #ED2939;  /* brand red */
+    background: #ED2939;  
     color: #ffffff;
     font-size: 20px;
     font-weight: 700;
     text-align: center;
     text-decoration: none;
-    border-radius: 20px;  /* same pill shape */
-    box-shadow: 0 10px 25px rgba(237, 41, 57, 0.35); /* red glow */
+    border-radius: 20px;  
+    box-shadow: 0 10px 25px rgba(237, 41, 57, 0.35);
     transition: 0.25s ease;
 }
-.signup-btn-home:hover {   background: #b00020;  /* darker actionable red */
+.signup-btn-home:hover {   background: #b00020; 
     transform: translateY(-4px);
     box-shadow: 0 12px 32px rgba(237, 41, 57, 0.45);
 }

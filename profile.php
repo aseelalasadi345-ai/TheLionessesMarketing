@@ -13,7 +13,6 @@ $email    = $_SESSION["email"];
 $avatar   = $_SESSION["avatar"] ?: "uploads/default.png";
 $msg = "";
 
-// === UPDATE AVATAR ===
 if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["avatar"])) {
 
     if (!is_dir("uploads")) mkdir("uploads", 0777, true);
@@ -26,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_FILES["avatar"])) {
         $stmt->bind_param("si", $target, $userId);
         $stmt->execute();
 
-        $_SESSION["avatar"] = $target; // refresh session
+        $_SESSION["avatar"] = $target; 
         $avatar = $target;
         $msg = "Profile picture updated successfully!";
     } else {

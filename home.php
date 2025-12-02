@@ -2,10 +2,8 @@
 session_start();
 require "db.php";
 
-// LOGIN STATE
 $isLogged = isset($_SESSION["username"]);
 
-// AVATAR
 $avatar = "img/default.png";
 if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])) {
     $avatar = $_SESSION["avatar"];
@@ -24,7 +22,6 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
 
     <div class="layout">
 
-        <!-- LEFT BLUE COLUMN -->
         <aside class="sidebar">
             <h2 class="brand-title">Lionesses<br>Marketing</h2>
 
@@ -52,7 +49,6 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
             <?php endif; ?>
         
 
-            <!-- SPECIAL EXTRA LINKS -->
             <div class="extra-links">
                 <a href="brandTransformation.php" class="extra-btn blue">Brand Transformation</a>
                 <a href="sellingReadyProjects.php" class="extra-btn red">Ready Projects</a>
@@ -71,10 +67,8 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
 
         </aside>
 
-        <!-- MAIN CONTENT -->
         <main class="content">
 
-            <!-- HERO -->
             <section class="hero">
                 <img src="Gemini_Generated_Image_4zlr784zlr784zlr.png" class="hero-img">
                 <div class="hero-box">
@@ -84,7 +78,6 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
                 </div>
             </section>
 
-            <!-- INFO SECTIONS -->
             <section class="info-section">
                 <h2>How it works</h2>
                 <div class="info-card">
@@ -101,7 +94,6 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
                 </div>
             </section>
 
-            <!-- COMPARE -->
             <section class="compare">
                 <h2>Why we are different</h2>
                 <a href="brandtransformation.php" class="brand-btn">Explore Brand Transformation</a>
@@ -156,7 +148,6 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
 
     </div>
 
-    <!-- FOOTER -->
     <footer class="footer">
         <h3>Contact Us</h3>
         <p>Email: lionesses.marketing@gmail.com</p>
