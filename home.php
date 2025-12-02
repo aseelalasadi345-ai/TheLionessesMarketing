@@ -22,6 +22,7 @@ if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])
 
     <div class="layout">
 
+        <!-- LEFT BLUE COLUMN -->
         <aside class="sidebar">
             <h2 class="brand-title">Lionesses<br>Marketing</h2>
 
