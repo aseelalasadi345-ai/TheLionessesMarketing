@@ -1,0 +1,164 @@
+.header {
+    width: 100%;
+    background: #002395;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    font-family: "Poppins", sans-serif;
+}
+
+.left-info {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.left-info a.logout {
+    color: #ff3b3b;
+    font-weight: 700;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.logo {
+    flex: 1;
+    text-align: center;
+    color: #fff;
+    font-size: 1.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav a {
+    margin-right: 60px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+nav a.logout {
+    color: #ff3b3b;
+    font-weight: 700;
+}
+
+.container {
+    max-width: 900px;
+    width: 80%;
+margin: 120px auto 20px;
+    background: #002395;
+    padding: 50px;
+    border-radius: 18px;
+    box-shadow: 0 0 25px rgba(0,0,0,.18);
+    color: #fff;
+}
+
+
+.container h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #fff;
+}
+
+label {
+    font-size: 1.1rem;
+    margin: 10px 0 8px;
+    display: block;
+}
+
+select,
+textarea {
+    width: 100%;
+    padding: 14px;
+    border-radius: 6px;
+    border: none;
+    font-size: 1rem;
+    margin-bottom: 18px;
+    outline: none;
+}
+
+textarea {
+    min-height: 130px;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    background: #ff3b3b;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn:hover {
+    background: #b40000;
+}
+
+.err {
+    background: #ffe5e5;
+    color: #b40000;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.success {
+    background: #e3ffe9;
+    color: #087a2c;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.footer {
+    width: 100%;
+    background: #002395;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 1rem;
+    margin-top: 120px;
+    position: relative;
+    bottom: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-wrapper {
+    flex: 1;
+}
+
+.contact-section a,
+.footer a {
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.contact-section a:hover,
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.header {
+    position: relative;
+    z-index: 9999;
+}
+nav a {
+    pointer-events: auto;
+    cursor: pointer;
+}

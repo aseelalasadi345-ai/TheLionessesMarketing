@@ -54,12 +54,19 @@ while ($row = $result->fetch_assoc()) {
 $projects_list = array_values($projects);
 
 $isLogged = isset($_SESSION["username"]);
-$isAdmin  = isset($_SESSION["role"]) && $_SESSION["role"] === "Admin";
+$avatar = "../img/default.png";
 
-$avatar = "img/default.png";
-if ($isLogged && !empty($_SESSION["avatar"]) && file_exists($_SESSION["avatar"])) {
-    $avatar = $_SESSION["avatar"];
+if ($isLogged && !empty($_SESSION["avatar"])) {
+
+    $projectRoot = dirname(__DIR__); 
+    $fullPath = $projectRoot . "/home/" . $_SESSION["avatar"];
+    $publicPath = "../home/" . $_SESSION["avatar"];
+
+    if (file_exists($fullPath)) {
+        $avatar = $publicPath;
+    }
 }
+
 
 $conn->close();
 ?>

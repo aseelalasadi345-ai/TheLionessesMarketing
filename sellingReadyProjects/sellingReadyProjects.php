@@ -24,14 +24,14 @@ session_start();
 
         <div class="nav-center">
             <a href="home.php">Home</a>
-            <a href="request.html">Requests</a>
-            <a href="aboutUs.html">About Us</a>
-            <a href="feedback.html">Feedback</a>
+            <a href="requests.php">Requests</a>
+            <a href="brand.php">About Us</a>
+            <a href="feedback.php">Feedback</a>
         </div>
 
         <div class="nav-user">
             <?php if (isset($_SESSION["username"])): ?>
-                <span class="welcome">Hi, <?php echo htmlspecialchars($_SESSION["username"]); ?></span>
+                <span class="welcome">Hi, <?php echo htmlspecialchars($_SESSION["username"]) ; ?></span>
                 <a class="logout" href="logout.php">Logout</a>
             <?php else: ?>
                 <a href="login.php">Login</a>
@@ -52,7 +52,7 @@ session_start();
             <!-- CARD 1 -->
             <div class="card">
                 <a href="supermarkt.html">
-                    <img src="image/supermarkt.jpg" alt="SuperMarkt">
+                    <img src="../super.jpg" alt="SuperMarkt">
                 </a>
                 <h3>SuperMarkt</h3>
 
@@ -64,10 +64,9 @@ session_start();
                 </a>
             </div>
 
-            <!-- CARD 2 -->
             <div class="card">
                 <a href="apartment.html">
-                    <img src="image/apartment.jpg" alt="Apartment Project">
+                    <img src="../apartment.jpg" alt="Apartment Project">
                 </a>
                 <h3>🔥 Apartment (Special Offer) 🔥</h3>
 
@@ -84,7 +83,7 @@ session_start();
             <!-- CARD 3 -->
             <div class="card">
                 <a href="juice.html">
-                    <img src="image/juice.jpg" alt="Juice Project">
+                    <img src="../juice.jpg" alt="Juice Project">
                 </a>
                 <h3>Juice Project</h3>
 

@@ -1,0 +1,144 @@
+/* ================================
+   GLOBAL
+================================ */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    background: #f5f7ff;
+    color: #0a0f3d;
+    line-height: 1.6;
+}
+
+/* ================================
+   HEADER
+================================ */
+.header {
+    width: 100%;
+    background: #002395; /* France Blue */
+    color: white;
+    padding: 12px 0 5px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.18);
+}
+
+.top .logo {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 35px;
+}
+
+.nav-center a {
+    margin: 0 18px;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: .2s;
+}
+
+.nav-center a:hover {
+    color: #ED2939; /* France Red */
+}
+
+.nav-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-user .welcome {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.logout {
+    background: #ED2939;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.logout:hover {
+    background: #b00020;
+}
+
+/* ================================
+   PAGE CONTENT
+================================ */
+.page-content {
+    max-width: 850px;
+    margin: 150px auto 40px auto;
+    padding: 0 20px;
+}
+
+.page-content h2 {
+    text-align: center;
+    color: #002395;
+    margin-top: 40px;
+}
+
+/* VIDEO BOX */
+.video-box {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.video-box video {
+    width: 90%;
+    max-width: 650px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+}
+
+/* POSTER IMAGE */
+.poster-img {
+    width: 80%;
+    max-width: 420px;
+    display: block;
+    margin: 25px auto;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+}
+
+/* BUTTON BELOW */
+.bid-btn {
+    background: #ED2939;
+    padding: 10px 28px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: .2s;
+}
+
+.bid-btn:hover {
+    background: #b00020;
+}
+
+/* ================================
+   FOOTER
+================================ */
+.footer {
+    background: #002395;
+    color: white;
+    text-align: center;
+    padding: 35px 10px;
+    margin-top: 60px;
+}
+
+.footer h3 {
+    margin-bottom: 10px;
+}
+
+.footer p {
+    margin: 3px 0;
+}

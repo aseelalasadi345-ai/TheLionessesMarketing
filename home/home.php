@@ -4,17 +4,20 @@ require "../db.php";
 
 $isLogged = isset($_SESSION["username"]);
 
-$avatar = "../img/default.png"; 
+$avatar = "../img/default.png";
 
 if ($isLogged && !empty($_SESSION["avatar"])) {
 
-    $fullPath = $_SERVER['DOCUMENT_ROOT'] . "/The Lionesses' Marketing/" . $_SESSION["avatar"];
+    $projectRoot = __DIR__;  
+    $fullPath = $projectRoot . "/" . $_SESSION["avatar"];
+    $publicPath = $_SESSION["avatar"];
 
     if (file_exists($fullPath)) {
-        $avatar = "../" . $_SESSION["avatar"]; 
+        $avatar = $publicPath;
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +31,6 @@ if ($isLogged && !empty($_SESSION["avatar"])) {
 
 <div class="layout">
 
-    <!-- LEFT BLUE COLUMN -->
     <aside class="sidebar">
         <h2 class="brand-title">Lionesses<br>Marketing</h2>
 
@@ -44,9 +46,9 @@ if ($isLogged && !empty($_SESSION["avatar"])) {
 
         <nav class="side-menu">
             <a href="home.php" class="side-link active">🏠 Home</a>
-            <a href="../request.html" class="side-link">📩 Requests</a>
+            <a href="../request/request.html" class="side-link">📩 Requests</a>
             <a href="aboutUs.html" class="side-link">💼 About Us</a>
-            <a href="feedback.html" class="side-link">⭐ Feedback</a>
+            <a href="feedback.php" class="side-link">⭐ Feedback</a>
             <a href="contact.php" class="side-link">📞 Contact</a>
 
             <?php if ($isLogged && $_SESSION["role"] === "Admin"): ?>
@@ -54,24 +56,22 @@ if ($isLogged && !empty($_SESSION["avatar"])) {
             <?php endif; ?>
         </nav>
 
-        <!-- SPECIAL EXTRA LINKS -->
         <div class="extra-links">
             <a href="../brandTransformation/brandTransformation.php" class="extra-btn blue">Brand Transformation</a>
-            <a href="readyProjects.html" class="extra-btn red">Ready Projects</a>
+            <a href="../sellingReadyProjects/sellingReadyProjects.php" class="extra-btn red">Ready Projects</a>
         </div>
 
         <?php if ($isLogged): ?>
             <a href="logout.php" class="logout-btn">Logout</a>
         <?php else: ?>
             <a href="login.php" class="logout-btn">Login</a>
+            <a href="signup.php" class="signup-btn">Sign up</a>
         <?php endif; ?>
 
     </aside>
 
-    <!-- MAIN CONTENT -->
     <main class="content">
 
-        <!-- HERO -->
         <section class="hero">
             <img src="Gemini_Generated_Image_4zlr784zlr784zlr.png" class="hero-img">
             <div class="hero-box">
@@ -82,7 +82,7 @@ if ($isLogged && !empty($_SESSION["avatar"])) {
         </section>
 
         <div id="browsing">
-        <!-- INFO SECTIONS -->
+            
         <section class="info-section">
             <h2>How it works</h2>
             <div class="info-card">
@@ -99,7 +99,6 @@ if ($isLogged && !empty($_SESSION["avatar"])) {
             </div>
         </section>
 
-        <!-- COMPARE -->
         <section class="compare">
             <h2>Why we are different</h2>
             <div class="compare-box">
@@ -114,7 +113,6 @@ if ($isLogged && !empty($_SESSION["avatar"])) {
             </div>
         </section>
 
-        <!-- BENEFITS -->
         <section class="benefits">
             <div class="benefit">QUICKLY<p>Decisions in minutes</p></div>
             <div class="benefit">CONVENIENT<p>Everything digital</p></div>
@@ -126,7 +124,6 @@ if ($isLogged && !empty($_SESSION["avatar"])) {
 
     <div class="samples-grid">
 
-        <!-- Image 1 -->
         <div class="sample-box">
             <img src="../imagesvideos/flames.jpg" class="sample-img">
         </div>
@@ -155,7 +152,6 @@ if ($isLogged && !empty($_SESSION["avatar"])) {
 
 </div>
 
-<!-- FOOTER -->
 <footer class="footer">
     <h3>Contact Us</h3>
     <p>Email: lionesses.marketing@gmail.com</p>

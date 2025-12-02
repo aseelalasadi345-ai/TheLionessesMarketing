@@ -1,4 +1,3 @@
-/* FRENCH COLORS */
 :root {
     --blue: #002395;
     --red: #ED2939;
@@ -6,7 +5,6 @@
     --bg: #f6f7ff;
 }
 
-/* RESET */
 body {
     margin: 0;
     padding: 0;
@@ -14,13 +12,11 @@ body {
     font-family: "Poppins", sans-serif;
 }
 
-/* LAYOUT (Sidebar + Content) */
 .layout {
     display: flex;
     min-height: 100vh;
 }
 
-/* SIDEBAR */
 .sidebar {
     width: 260px;
     background: var(--blue);
@@ -37,14 +33,12 @@ body {
     border-bottom-right-radius: 40px;
 }
 
-/* Sidebar title */
 .brand-title {
     font-size: 32px;
     font-weight: 800;
     line-height: 1.2;
 }
 
-/* User area */
 .user-area {
     margin-top: 20px;
     text-align: center;
@@ -91,7 +85,6 @@ body {
     font-weight: 600;
 }
 
-/* Special extra buttons */
 .extra-links {
     margin-top: 35px;
     display: flex;
@@ -116,8 +109,23 @@ body {
     transform: translateY(-5px);
 }
 
-/* Logout */
 .logout-btn {
+    margin-top: 40px;
+    display: block;
+    padding: 12px;
+    text-align: center;
+    background: #d98f28;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    opacity: .85;
+}
+
+.signup-btn {
     margin-top: 40px;
     display: block;
     padding: 12px;
@@ -129,17 +137,15 @@ body {
     font-weight: bold;
 }
 
-.logout-btn:hover {
+.signup-btn:hover {
     opacity: .85;
 }
 
-/* MAIN CONTENT */
 .content {
     flex: 1;
     padding: 40px 60px;
 }
 
-/* HERO */
 .hero {
     position: relative;
     height: 70vh;
@@ -182,7 +188,6 @@ body {
 
 .cta:hover { opacity: .85; }
 
-/* INFO SECTIONS */
 .info-section { margin-bottom: 60px; }
 
 .info-card {
@@ -193,7 +198,6 @@ body {
     box-shadow: 0 12px 25px rgba(0,0,0,0.20);
 }
 
-/* COMPARE */
 .compare-box {
     background: var(--red);
     padding: 30px;
@@ -216,7 +220,6 @@ body {
 .yes { color: #98ffb2; font-weight: bold; }
 .no { color: #ffb3b3; font-weight: bold; }
 
-/* BENEFITS */
 .benefits {
     display: flex;
     gap: 25px;
@@ -237,7 +240,6 @@ body {
     transform: translateY(-8px);
 }
 
-/* FOOTER */
 .footer {
     background: var(--blue);
     color: white;
@@ -250,10 +252,6 @@ body {
     font-weight: bold;
 }
 .footer-link:hover { opacity: .8; }
-
-/* ========================= */
-/* SAMPLES SECTION (NEW) */
-/* ========================= */
 
 .samples {
     padding: 80px 6vw;
@@ -288,7 +286,6 @@ body {
     border-radius: 12px;
 }
 
-/* Hover effect */
 .sample-box:hover {
     transform: translateY(-6px);
     box-shadow: 0 14px 32px rgba(0,0,0,0.22);

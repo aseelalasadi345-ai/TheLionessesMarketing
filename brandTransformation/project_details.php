@@ -145,7 +145,6 @@ $conn->close();
             <img src="../uploads/projects/<?= $project_details['image']; ?>" class="project-main-image">
         <?php endif; ?>
 
-        <!-- The project file -->
         <?php if (!empty($project_details['file'])): ?>
             <h3>Project File</h3>
             <?php 
@@ -178,7 +177,6 @@ $conn->close();
         <?php endif; ?>
     </div>
 
-    <!-- BEFORE / AFTER -->
     <div class="metrics-comparison">
 
         <div class="before-details">
