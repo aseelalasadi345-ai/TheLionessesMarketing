@@ -43,13 +43,11 @@ nav a:hover {
     opacity: 0.8;
 }
 
-/* LOGOUT SPECIAL */
 nav a.logout {
     color: #ff3b3b;
     font-weight: 700;
 }
 
-/* ===== FEEDBACK CONTAINER ===== */
 .container {
     max-width: 900px;
     width: 80%;
@@ -62,7 +60,6 @@ margin: 120px auto 20px;
 }
 
 
-/* TITLE */
 .container h1 {
     font-size: 2rem;
     text-align: center;
@@ -70,14 +67,12 @@ margin: 120px auto 20px;
     color: #fff;
 }
 
-/* FORM LABELS */
 label {
     font-size: 1.1rem;
     margin: 10px 0 8px;
     display: block;
 }
 
-/* INPUT ELEMENTS */
 select,
 textarea {
     width: 100%;
@@ -89,12 +84,10 @@ textarea {
     outline: none;
 }
 
-/* TEXTAREA */
 textarea {
     min-height: 130px;
 }
 
-/* BUTTON */
 .btn {
     width: 100%;
     padding: 14px;
@@ -112,7 +105,6 @@ textarea {
     background: #b40000;
 }
 
-/* ===== MESSAGES ===== */
 .err {
     background: #ffe5e5;
     color: #b40000;
@@ -129,7 +121,6 @@ textarea {
     margin-bottom: 15px;
 }
 
-/* ===== FOOTER ===== */
 .footer {
     width: 100%;
     background: #002395;
@@ -137,19 +128,17 @@ textarea {
     text-align: center;
     padding: 20px 0;
     font-size: 1rem;
-    margin-top: 120px; /* <<< THIS pushes it DOWN */
+    margin-top: 120px;
     position: relative;
     bottom: 0;
 }
 
-/* PAGE HEIGHT CONTROL */
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-/* FIXED: this pushes footer down — applied to wrapper, NOT .container */
 .page-wrapper {
     flex: 1;
 }

@@ -2,7 +2,6 @@
 require "db.php";
 session_start();
 
-// REDIRECT IF NOT LOGGED IN
 if (!isset($_SESSION["userid"])) {
     header("Location: login.php");
     exit();
@@ -10,7 +9,6 @@ if (!isset($_SESSION["userid"])) {
 
 $msg = "";
 
-// HANDLE FORM SUBMISSION
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $user_id = $_SESSION["userid"];
     $rating = $_POST["rating"] ?? "Excellent";
@@ -44,7 +42,7 @@ $conn->close();
 
 <body>
 
-<?php include __DIR__ . "/header/header.php"; ?> <!-- HEADER LOADED HERE -->
+<?php include __DIR__ . "/header/header.php"; ?> 
 
 <div class="container">
     <h1>Share Your Feedback</h1>
@@ -66,7 +64,7 @@ $conn->close();
     </form>
 </div>
 
-<?php include __DIR__ . "/header/footer.php"; ?> <!-- FOOTER -->
+<?php include __DIR__ . "/header/footer.php"; ?> 
 
 
 
